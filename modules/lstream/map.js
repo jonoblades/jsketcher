@@ -1,4 +1,4 @@
-import {StreamBase} from './base';
+import {StreamBase} from './streamBase';
 
 export class MapStream extends StreamBase {
 

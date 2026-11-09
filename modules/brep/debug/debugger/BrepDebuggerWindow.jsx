@@ -4,7 +4,7 @@ import BrepDebugger from './brepDebugger';
 import {addToGroup, clearGroup, createGroup, removeFromGroup} from 'scene/sceneGraph';
 import Fa from 'ui/components/Fa';
 
-import ls from './BrepDebuggerWindow.less';
+import ls from './BrepDebuggerWindow.css';
 
 class BrepDebuggerWindow extends React.Component {
   

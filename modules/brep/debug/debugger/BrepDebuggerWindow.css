@@ -1,0 +1,10 @@
+.root {
+  z-index: 998;
+  border: 2px solid #3179ff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.root :global(.x-Window-content) {
+  font-size: 1.2rem;
+  background: #eee;
+  color: #1a1a1a;
+}

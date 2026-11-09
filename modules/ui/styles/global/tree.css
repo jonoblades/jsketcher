@@ -1,0 +1,20 @@
+.tree {
+  line-height: 1.9;
+}
+.tree-caption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.tree-caption:hover {
+  color: #5A93BBFF;
+}
+.tree-placeholder {
+  visibility: hidden;
+}
+.tree-icon {
+  padding: 0 5px 0 2px;
+}
+.tree-content {
+  padding-left: 16px;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ls from './Stack.less'
+import ls from './Stack.css'
 import cx from "classnames";
 
 type StackProps = React.HTMLAttributes<HTMLDivElement>;

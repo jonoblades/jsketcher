@@ -1,0 +1,18 @@
+.root {
+  color: hsl(0, 0%, 90%);
+  background-color: hsl(200, 6%, 23%);
+  border: solid 1px hsl(200, 6%, 12%);
+  border-radius: 3px;
+}
+.flatBottom {
+  border-radius: 3px 3px 0 0;
+}
+.flatTop {
+  border-radius: 0 0 3px 3px;
+}
+.flatRight {
+  border-radius: 3px 0 0 3px;
+}
+.flatLeft {
+  border-radius: 0 3px 3px 0;
+}

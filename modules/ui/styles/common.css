@@ -1,0 +1,21 @@
+*.autoMarginLeft {
+  margin-left: auto !important;
+}
+*.floatRight {
+  float: right;
+}
+.fullWidth {
+  width: 100%;
+}
+.dangerColor {
+  color: #b00;
+}
+.dangerBg {
+  background-color: #b00;
+}
+.inlineBlock {
+  display: inline-block;
+}
+.scrollable {
+  overflow: auto;
+}

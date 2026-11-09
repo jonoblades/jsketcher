@@ -1,0 +1,10 @@
+.title {
+  border-bottom: 1px solid hsl(200, 6%, 38%);
+  background-color: hsl(200, 6%, 12%);
+  padding: 3px 6px;
+  line-height: 1.7;
+}
+.handle {
+  font-size: 8px;
+  color: hsl(0, 0%, 65%);
+}

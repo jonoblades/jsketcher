@@ -2,7 +2,7 @@ import React from 'react';
 import connect from 'ui/connect';
 import Toolbar from 'ui/components/Toolbar';
 import {ConnectedActionButton, ToolbarActionButtons} from './PlugableToolbar';
-import ls from './HeadsUpToolbar.less';
+import ls from './HeadsUpToolbar.css';
 import {combine} from 'lstream';
 
 export const HeadsUpToolbar = connect(streams => combine(

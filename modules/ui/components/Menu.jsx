@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 
-import ls from './Menu.less';
+import ls from './Menu.css';
 import AuxWidget from "./AuxWidget";
 import cx from 'classnames';
 import Fa from './Fa';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Folder from 'ui/components/Folder';
-import ls from './FloatView.less';
+import ls from './FloatView.css';
 import connect from 'ui/connect';
 import mapContext from 'ui/mapContext';
 import Fa from 'ui/components/Fa';

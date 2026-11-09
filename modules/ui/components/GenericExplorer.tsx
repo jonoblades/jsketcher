@@ -1,4 +1,4 @@
-import ls from "./GenericExplorer.less";
+import ls from "./GenericExplorer.css";
 
 import React, {useState} from 'react';
 import cx from 'classnames';

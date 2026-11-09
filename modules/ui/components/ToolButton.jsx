@@ -1,5 +1,5 @@
 import React from 'react';
-import ls from './ToolButton.less';
+import ls from './ToolButton.css';
 import cx from 'classnames';
 
 export default function ToolButton({pressed, type, className, ...props}) {

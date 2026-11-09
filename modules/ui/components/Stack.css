@@ -1,0 +1,9 @@
+.root > * {
+  border-bottom: 1px solid hsl(200, 6%, 38%);
+  padding: 3px 6px;
+  line-height: 1.7;
+}
+.root > .root {
+  padding: 0;
+  border-bottom: none;
+}

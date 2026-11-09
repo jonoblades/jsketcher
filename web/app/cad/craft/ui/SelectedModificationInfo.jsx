@@ -3,7 +3,7 @@ import connect from 'ui/connect';
 import Widget from 'ui/components/Widget';
 import decoratorChain from 'ui/decoratorChain';
 import {combine, merger} from 'lstream';
-import ls from './SelectedModificationInfo.less';
+import ls from './SelectedModificationInfo.css';
 import ImgIcon from 'ui/components/ImgIcon';
 import mapContext from 'ui/mapContext';
 import {EMPTY_OBJECT} from 'gems/objects';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ls from './ControlBar.less';
+import ls from './ControlBar.css';
 import cx from 'classnames';
 
 export default function ControlBar({left, right}) {

@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import cx from 'classnames';
-import ls from './SketchObjectExplorer.less'
+import ls from './SketchObjectExplorer.css'
 import {combine} from 'lstream';
 import {useStream} from "ui/effects";
 import {SketcherAppContext} from "./SketcherAppContext";

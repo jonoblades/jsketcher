@@ -1,5 +1,5 @@
 import React from 'react';
-import ls from './RenderObject.less';
+import ls from './RenderObject.css';
 
 export default function RenderObject({object}) {
   return <div className={ls.root}><RenderObjectImpl object={object}/></div>

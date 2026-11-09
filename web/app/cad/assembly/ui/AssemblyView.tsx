@@ -4,7 +4,7 @@ import {Status} from "ui/components/Status";
 import {ReactApplicationContext} from "../../dom/ReactApplicationContext";
 import cx from 'classnames';
 import {NoIcon} from "../../../sketcher/icons/NoIcon";
-import ls from "../../../sketcher/components/ConstraintExplorer.less";
+import ls from "../../../sketcher/components/ConstraintExplorer.css";
 import Fa from "ui/components/Fa";
 import {ApplicationContext} from "cad/context";
 import {StepByStepSimulation} from "./StepByStepSimulation";

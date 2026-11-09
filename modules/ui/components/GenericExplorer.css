@@ -1,0 +1,80 @@
+.objectItem {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 2px 5px;
+  pointer-events: auto;
+  display: flex;
+  align-items: stretch;
+}
+.objectItem .expandHandleInactive {
+  border-radius: 5px 0 0 5px;
+  padding: 3px 3px;
+}
+.objectItem .expandHandle {
+  border-radius: 5px 0 0 5px;
+  padding: 3px 3px;
+  cursor: pointer;
+}
+.objectItem .expandHandle:hover {
+  background-color: #0074D9;
+}
+.objectItem .expandHandle:active {
+  background-color: #000d7f;
+}
+.objectItem .menuButton {
+  border-radius: 0 5px 5px 0;
+  background-color: #9c9c9c;
+  padding: 0 3px;
+  cursor: pointer;
+}
+.objectItem .menuButton:hover {
+  background-color: #0074D9;
+}
+.objectItem .menuButton:active {
+  background-color: #000d7f;
+}
+.objectItem .objectLabel {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0 5px;
+  cursor: pointer;
+}
+.objectItem .objectLabel:hover {
+  background-color: #0074D9;
+}
+.objectItem .objectLabel:active {
+  background-color: #000d7f;
+}
+.objectItem .objectLabel.selected {
+  background: linear-gradient(#59acff, #0074D9);
+}
+.objectItem .objectLabel.highlighted {
+  background-color: #0074D9;
+}
+.onOffButton {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+.onOffButton.on {
+  background-color: #005e82;
+  cursor: pointer;
+}
+.onOffButton.on:hover {
+  background-color: #0074D9;
+}
+.onOffButton.on:active {
+  background-color: #000d7f;
+}
+.onOffButton.off {
+  background-color: #5f5f5f;
+  cursor: pointer;
+}
+.onOffButton.off:hover {
+  background-color: #0074D9;
+}
+.onOffButton.off:active {
+  background-color: #000d7f;
+}

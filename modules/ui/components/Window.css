@@ -1,0 +1,62 @@
+.root {
+  position: absolute;
+  z-index: 1;
+  background-color: hsl(200, 6%, 28%);
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  min-height: 20px;
+  pointer-events: auto;
+}
+.root.compact {
+  font-size: 11px;
+}
+.mandatoryBorder {
+  border: 5px solid hsl(200, 6%, 28%);
+}
+.bar {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: hsl(200, 6%, 23%);
+  cursor: default;
+}
+.title {
+  padding: 0.3em 0 0.3em 0.5em;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+.controlButtons {
+  display: flex;
+  align-items: stretch;
+}
+.button {
+  padding: 0 0.5em;
+  display: flex;
+  align-items: center;
+}
+.button:hover {
+  background-color: #2B7D2B;
+  border-color: #2B7D2B;
+}
+.button:active {
+  background-color: #113111;
+  border-color: #113111;
+}
+.button svg {
+  width: 16px;
+  height: 16px;
+}
+.danger:hover {
+  background-color: #b00;
+  border-color: #b00;
+}
+.danger:active {
+  background-color: #550000;
+  border-color: #550000;
+}
+.content {
+  overflow-y: auto;
+  flex-grow: 1;
+}

@@ -3,7 +3,7 @@ import {useStreamWithUpdater} from "ui/effects";
 import Window from "ui/components/Window";
 import {getAllSketcherActions} from "../actions";
 import {memoize} from "lodash/function";
-import ls from './TerminalView.less';
+import ls from './TerminalView.css';
 import {DIRECTIONS} from "ui/components/Window";
 import {SketcherAppContext} from "./SketcherAppContext";
 

@@ -2,7 +2,6 @@ import {Ellipse} from '../shapes/ellipse'
 import {Circle} from '../shapes/circle'
 import {EditCircleTool} from './circle'
 import {DragTool} from './drag'
-import {EllipseTool, STATE_RADIUS} from './ellipse'
 import {AngleBetweenDimension} from "../shapes/dim";
 import {AddAngleBetweenDimTool} from "./dim";
 import {EllipseEditTool} from "./ellipse-edit";

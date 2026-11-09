@@ -1,5 +1,5 @@
 import React from "react";
-import ls from "./SceneInlineSection.less";
+import ls from "./SceneInlineSection.css";
 
 interface SceneInlineSectionProps {
   title: any;

@@ -2,7 +2,7 @@ import React from 'react';
 import connect from 'ui/connect';
 import {Section} from 'ui/components/Section';
 import {constant} from 'lstream';
-import ls from './ObjectExplorer.less';
+import ls from './ObjectExplorer.css';
 import cx from 'classnames';
 import {MShell} from 'cad/model/mshell';
 import {MDatum} from 'cad/model/mdatum';

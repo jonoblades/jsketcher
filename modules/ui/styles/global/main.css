@@ -1,0 +1,82 @@
+html,
+pre {
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: 'Roboto', 'Helvetica Neue Light', HelveticaNeue-Light, 'Helvetica Neue', Helvetica, sans-serif;
+}
+html svg,
+pre svg {
+  width: 17px;
+  height: 17px;
+}
+body {
+  background-color: hsl(200, 6%, 12%);
+  color: hsl(0, 0%, 90%);
+}
+iframe {
+  border: 0;
+}
+.disable-selection {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+pre {
+  line-height: 1.5;
+}
+.hover:hover {
+  background-color: #003f5d;
+}
+.highlighted {
+  background-color: #5A93BBFF;
+}
+.selected {
+  background-color: #285f7a;
+}
+.pointer {
+  cursor: pointer;
+}
+.centered-row {
+  display: inline-flex;
+  align-items: center;
+}
+path {
+  stroke: currentColor;
+}
+.error-text {
+  color: tomato;
+}
+.warning-text {
+  color: bisque;
+}
+.bg-color-0 {
+  background-color: hsl(200, 6%, 7%);
+}
+.bg-color-1 {
+  background-color: hsl(200, 6%, 12%);
+}
+.bg-color-2 {
+  background-color: hsl(200, 6%, 17%);
+}
+.bg-color-3 {
+  background-color: hsl(200, 6%, 23%);
+}
+.bg-color-4 {
+  background-color: hsl(200, 6%, 28%);
+}
+.bg-color-5 {
+  background-color: hsl(200, 6%, 33%);
+}
+.bg-color-6 {
+  background-color: hsl(200, 6%, 38%);
+}
+.bg-color-7 {
+  background-color: hsl(200, 6%, 43%);
+}
+.bg-color-8 {
+  background-color: hsl(200, 6%, 48%);
+}
+.bg-color-9 {
+  background-color: hsl(200, 6%, 53%);
+}

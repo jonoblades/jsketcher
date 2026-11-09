@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import ls from './CameraControl.less';
+import ls from './CameraControl.css';
 import cameraControlRenderer from 'scene/cameraControlRenderer';
 import {ReactApplicationContext} from "cad/dom/ReactApplicationContext";
 

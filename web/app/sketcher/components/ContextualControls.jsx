@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import ls from './ContextualControls.less';
+import ls from './ContextualControls.css';
 import Fa from 'ui/components/Fa';
 import { matchAvailableActions } from "../actions";
 import { useStream } from "ui/effects";

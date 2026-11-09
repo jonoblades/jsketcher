@@ -2,9 +2,9 @@ import React from 'react';
 import mapContext from 'ui/mapContext';
 import {Section} from 'ui/components/Section';
 import Fa from 'ui/components/Fa';
-import ls from './ProjectManager.less';
+import ls from './ProjectManager.css';
 import {ContextMenu, ContextMenuItem} from 'ui/components/Menu';
-import cmn from 'ui/styles/common.less';
+import cmn from 'ui/styles/common.css';
 import Folder from 'ui/components/Folder';
 import connect from 'ui/connect';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ls from './Window.less'
+import ls from './Window.css'
 import cx from 'classnames';
 import {NOOP} from 'gems/func';
 import {FaTimes} from 'react-icons/fa';

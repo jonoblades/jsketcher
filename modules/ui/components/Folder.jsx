@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import ls from './Folder.less'
+import ls from './Folder.css'
 import Fa from "./Fa";
 import cx from "classnames";
 

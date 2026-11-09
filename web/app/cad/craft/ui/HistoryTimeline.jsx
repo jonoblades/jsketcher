@@ -1,5 +1,5 @@
 import React from 'react';
-import ls from './HistoryTimeline.less';
+import ls from './HistoryTimeline.css';
 import connect from 'ui/connect';
 import decoratorChain from 'ui/decoratorChain';
 import {finishHistoryEditing, removeAndDropDependants} from '../craftHistoryUtils';

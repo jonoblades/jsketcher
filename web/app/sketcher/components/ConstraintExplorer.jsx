@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import ls from './ConstraintExplorer.less';
+import ls from './ConstraintExplorer.css';
 import Fa from 'ui/components/Fa';
 import {useStream} from "ui/effects";
 import cx from 'classnames';

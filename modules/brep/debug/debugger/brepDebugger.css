@@ -1,0 +1,64 @@
+:global .brep-debugger {
+  padding: 0.4rem;
+  line-height: 1.5;
+}
+:global .brep-debugger .strike {
+  text-decoration: line-through;
+}
+:global .brep-debugger .grayed {
+  color: lightgray;
+}
+:global .brep-debugger .invisible {
+  visibility: hidden;
+}
+:global .brep-debugger button {
+  font-size: inherit;
+  padding: 0 0.4rem;
+}
+:global .brep-debugger .operands-veiew {
+  display: flex;
+  justify-content: space-between;
+}
+:global .brep-debugger .operands-veiew > * {
+  flex: 1 1;
+}
+:global .brep-debugger .section.closable > .caption {
+  cursor: pointer;
+}
+:global .brep-debugger .section.closable > .caption .title:hover {
+  color: blue;
+  text-decoration: underline;
+}
+:global .brep-debugger .section .caption {
+  white-space: nowrap;
+  user-select: none;
+}
+:global .brep-debugger .section .caption.accent {
+  background-color: #fff4f4;
+  font-weight: bold;
+}
+:global .brep-debugger .section .caption.centered {
+  text-align: center;
+}
+:global .brep-debugger .section .caption.operand-a {
+  background-color: #eff4ff;
+}
+:global .brep-debugger .section .caption.operand-b {
+  background-color: #f4fff5;
+}
+:global .brep-debugger .section .caption.result {
+  background-color: #fefff4;
+}
+:global .brep-debugger .clickable {
+  cursor: pointer;
+}
+:global .brep-debugger .clickable:hover {
+  color: blue;
+}
+:global .brep-debugger .button {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+:global .brep-debugger .button:hover {
+  color: blue;
+}

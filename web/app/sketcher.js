@@ -1,5 +1,7 @@
-import 'ui/styles/global/index.less';
-import '../css/app.less'
+import 'babel-polyfill';
+import 'font-awesome/css/font-awesome.min.css';
+import 'ui/styles/global/index.css';
+import '../css/app.css'
 
 import {createAppContext} from './sketcher/sketcherContext';
 import {Constraints} from './sketcher/parametric'

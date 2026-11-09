@@ -1,5 +1,5 @@
 import React from 'react';
-import ls from './SketcherToolbars.less';
+import ls from './SketcherToolbars.css';
 import {createPlugableToolbar} from '../../dom/components/PlugableToolbar';
 import '../../../sketcher/actions';
 

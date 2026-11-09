@@ -1,0 +1,70 @@
+.titleBar {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-transform: uppercase;
+  padding: 3px 5px;
+  pointer-events: auto;
+  flex: 0 0 ;
+  margin-top: 4px;
+}
+.scrollableArea {
+  overflow-y: auto;
+  flex: 1 1;
+  pointer-events: auto;
+}
+.button {
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #0074D9;
+}
+.button:active {
+  background-color: #000d7f;
+}
+.objectItem {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 2px 5px;
+  pointer-events: auto;
+  display: flex;
+  align-items: stretch;
+}
+.objectItem.conflicting {
+  background-color: rgba(93, 46, 46, 0.6);
+}
+.objectItem.redundant {
+  background-color: rgba(93, 88, 40, 0.6);
+}
+.objectItem .objectIcon {
+  border-radius: 5px 0 0 5px;
+  padding: 3px 3px;
+  background-color: #606060;
+}
+.objectItem .removeButton {
+  border-radius: 0 5px 5px 0;
+  background-color: #9c9c9c;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.objectItem .removeButton:hover {
+  background-color: #0074D9;
+}
+.objectItem .removeButton:active {
+  background-color: #000d7f;
+}
+.objectItem .removeButton:hover {
+  color: red;
+}
+.objectItem .objectTag {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0 5px;
+  cursor: pointer;
+}
+.objectItem .objectTag:hover {
+  background-color: #0074D9;
+}

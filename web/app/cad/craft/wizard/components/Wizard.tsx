@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 
-import ls from './Wizard.less';
+import ls from './Wizard.css';
 import CadError from '../../../../utils/errors';
 import {FormEditContext, FormParamsContext, FormPathContext, FormStateContext} from './form/Form';
 import {GenericWizard} from "ui/components/GenericWizard";

@@ -1,0 +1,7 @@
+a {
+  color: hsl(0, 0%, 90%);
+  text-decoration: underline;
+}
+a:hover {
+  color: #5A93BBFF;
+}

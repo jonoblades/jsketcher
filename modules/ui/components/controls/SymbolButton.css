@@ -1,0 +1,32 @@
+.symbolButton {
+  cursor: pointer;
+}
+.symbolButton:active {
+  transition: 100ms;
+}
+.neutral {
+  cursor: pointer;
+  color: #fff;
+}
+.neutral:active {
+  transition: 100ms;
+}
+.neutral:hover {
+  color: #EFEFEF;
+}
+.neutral:active {
+  color: #9cdaf7;
+}
+.danger {
+  cursor: pointer;
+  color: #fff;
+}
+.danger:active {
+  transition: 100ms;
+}
+.danger:hover {
+  color: #b00;
+}
+.danger:active {
+  color: #ff2222;
+}

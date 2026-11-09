@@ -1,7 +1,7 @@
 import {View} from './view';
 import * as SceneGraph from 'scene/sceneGraph';
 import {getAttribute, setAttribute} from 'scene/objectData';
-import {FaceView, SELECTION_COLOR} from './faceView';
+import {FaceView} from './faceView';
 import {EdgeView} from './edgeView';
 import {FACE, LOOP, SHELL} from '../../model/entities';
 import {Mesh} from 'three';

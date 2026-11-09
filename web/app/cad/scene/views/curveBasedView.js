@@ -2,7 +2,6 @@ import {View} from './view';
 import * as SceneGraph from 'scene/sceneGraph';
 import {setAttribute} from 'scene/objectData';
 import ScalableLine from 'scene/objects/scalableLine';
-import {NULL_COLOR} from "cad/scene/views/faceView";
 
 export class CurveBasedView extends View {
   constructor(ctx, model, tessellation, visualWidth, color, markTable) {

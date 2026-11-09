@@ -1,0 +1,34 @@
+.item {
+  word-wrap: break-word;
+  word-break: break-all;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.item.selected,
+.item:hover {
+  background-color: #780000;
+}
+.item .buttons {
+  display: none;
+}
+.item:hover .buttons {
+  display: initial;
+}
+.buttons {
+  display: none;
+  font-size: 13px;
+  margin-left: auto;
+}
+.buttons > * {
+  padding: 0 3px;
+}
+.buttons > *.danger:hover {
+  color: red;
+}
+.buttons > i:hover {
+  color: yellowgreen;
+}
+.opLabel {
+  text-transform: uppercase;
+}

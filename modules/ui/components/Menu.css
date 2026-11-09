@@ -1,0 +1,52 @@
+.root {
+  padding: 5px 0;
+}
+.item {
+  padding: 5px 6px 5px 5px;
+  cursor: pointer;
+  text-transform: capitalize;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+.item:hover {
+  background-color: #0074D9;
+}
+.item:active {
+  background-color: #000d7f;
+}
+.item.disabled:hover,
+.item.disbaled:active {
+  background-color: #545454;
+}
+.item .hotKey {
+  color: hsl(0, 0%, 65%);
+  font-size: 9px;
+  padding-left: 14px;
+  flex-grow: 1;
+  text-align: right;
+}
+.item .label {
+  padding-left: 5px;
+  padding-right: 3px;
+}
+.separator {
+  border-top: solid 1px hsl(200, 6%, 48%);
+}
+.disabled {
+  color: hsl(0, 0%, 65%);
+}
+.contextMenu:hover .contextMenuBtn {
+  color: #fff;
+}
+.contextMenuBtn {
+  display: inline-block;
+  padding: 2px 3px;
+  color: #ffffff33;
+}
+.contextMenuBtn:hover {
+  color: #fff;
+}
+.contextMenuBtn:active {
+  color: #7f0807;
+}

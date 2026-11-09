@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ls from './ActionInfo.less';
+import ls from './ActionInfo.css';
 
 import AuxWidget from 'ui/components/AuxWidget';
 import connect from 'ui/connect';

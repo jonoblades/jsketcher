@@ -3,7 +3,7 @@ import Stack from 'ui/components/Stack';
 import connect from 'ui/connect';
 import Fa from 'ui/components/Fa';
 import ImgIcon from 'ui/components/ImgIcon';
-import ls from './OperationHistory.less';
+import ls from './OperationHistory.css';
 import cx from 'classnames';
 import ButtonGroup from 'ui/components/controls/ButtonGroup';
 import Button from 'ui/components/controls/Button';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './brepDebugger.less';
+import './brepDebugger.css';
 import BREP_DEBUG from '../brep-debug';
 import ShellExplorer from './shellExplorer';
 import LoopDetectionExplorer from './loopDetectionExplorer';

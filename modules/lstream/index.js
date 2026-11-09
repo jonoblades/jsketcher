@@ -1,3 +1,4 @@
+import './base';
 import {CombineStream} from './combine';
 import {DistinctStateStream, StateStream} from './state';
 import {Emitter} from './emitter';

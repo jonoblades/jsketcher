@@ -1,0 +1,10 @@
+.requestInfo {
+  display: flex;
+  margin-bottom: 5px;
+}
+.requestInfo > * {
+  margin-right: 5px;
+}
+.pic {
+  margin-right: 5px;
+}

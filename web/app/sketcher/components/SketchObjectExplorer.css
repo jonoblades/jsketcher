@@ -1,0 +1,99 @@
+.titleBar {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-transform: uppercase;
+  padding: 3px 5px;
+  pointer-events: auto;
+  flex: 0 0 ;
+  margin-top: 4px;
+}
+.scrollableArea {
+  overflow-y: auto;
+  flex: 1 1;
+  pointer-events: auto;
+}
+.button {
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #0074D9;
+}
+.button:active {
+  background-color: #000d7f;
+}
+.objectItem {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 2px 5px;
+  pointer-events: auto;
+  display: flex;
+  align-items: stretch;
+}
+.objectItem .objectIcon {
+  border-radius: 5px 0 0 5px;
+  padding: 3px 3px;
+  background-color: #9c9c9c;
+}
+.objectItem .objectIcon svg {
+  width: 16px;
+  height: 16px;
+}
+.objectItem .menuButton {
+  border-radius: 0 5px 5px 0;
+  background-color: #9c9c9c;
+  padding: 0 3px;
+  cursor: pointer;
+}
+.objectItem .menuButton:hover {
+  background-color: #0074D9;
+}
+.objectItem .menuButton:active {
+  background-color: #000d7f;
+}
+.objectItem .objectTag {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0 5px;
+  cursor: pointer;
+}
+.objectItem .objectTag:hover {
+  background-color: #0074D9;
+}
+.objectItem .objectTag:active {
+  background-color: #000d7f;
+}
+.objectItem .objectTag.selected {
+  background: linear-gradient(#59acff, #0074D9);
+}
+.objectItem .objectRole {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+.objectItem .objectRole.construction {
+  background-color: #005e82;
+  cursor: pointer;
+}
+.objectItem .objectRole.construction:hover {
+  background-color: #0074D9;
+}
+.objectItem .objectRole.construction:active {
+  background-color: #000d7f;
+}
+.objectItem .objectRole.sketch {
+  background-color: #5f5f5f;
+  cursor: pointer;
+}
+.objectItem .objectRole.sketch:hover {
+  background-color: #0074D9;
+}
+.objectItem .objectRole.sketch:active {
+  background-color: #000d7f;
+}
+.objectItem .objectRole.aux {
+  cursor: default;
+  background-color: #FDF7E7;
+  color: #1a1a1a;
+}

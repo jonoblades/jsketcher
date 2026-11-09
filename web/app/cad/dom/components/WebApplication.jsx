@@ -1,6 +1,6 @@
 import React from 'react';
 
-import 'ui/styles/global/index.less';
+import 'ui/styles/global/index.css';
 import AppTabs from "./AppTabs";
 import {StreamsContext} from "ui/streamsContext";
 import {ReactApplicationContext} from "../ReactApplicationContext";

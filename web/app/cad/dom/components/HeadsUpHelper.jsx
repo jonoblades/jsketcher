@@ -1,5 +1,5 @@
 import React from 'react';
-import ls from './HeadsUpHelper.less';
+import ls from './HeadsUpHelper.css';
 
 import Socket from './Socket';
 import {AuxWidgetLook} from 'ui/components/AuxWidget';

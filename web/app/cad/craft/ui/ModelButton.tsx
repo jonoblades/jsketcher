@@ -2,7 +2,7 @@ import React from "react";
 import {ModelButtonBehavior} from "cad/craft/ui/ModelButtonBehaviour";
 import {MObject} from "cad/model/mobject";
 import cx from "classnames";
-import ls from './ModelButton.less'
+import ls from './ModelButton.css'
 
 interface ModelButtonProps {
   model: MObject;

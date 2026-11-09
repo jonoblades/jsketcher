@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import Fa from 'ui/components/Fa';
 import cx from 'classnames';
 
-import ls from './TabSwitcher.less';
+import ls from './TabSwitcher.css';
 
 export default function TabSwitcher({children, className}) {
 

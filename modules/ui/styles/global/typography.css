@@ -1,0 +1,38 @@
+.small-typography {
+  font-size: 12px;
+  line-height: 1.3;
+}
+.small-typography svg {
+  width: 16px;
+  height: 16px;
+}
+.mid-typography {
+  font-size: 13px;
+  line-height: 1.35;
+}
+.mid-typography svg {
+  width: 16px;
+  height: 16px;
+}
+.regular-typography {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.regular-typography svg {
+  width: 17px;
+  height: 17px;
+}
+.comfort-typography {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.comfort-typography svg {
+  width: 18px;
+  height: 18px;
+}
+.condensed {
+  font-family: 'Roboto Condensed', 'Helvetica Neue Light', HelveticaNeue-Light, 'Helvetica Neue', Helvetica, sans-serif;
+}
+.padded {
+  padding: 0.5em;
+}

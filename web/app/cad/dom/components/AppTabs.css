@@ -1,0 +1,17 @@
+.root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+}
+.content > * {
+  flex: 1;
+}
+.contentSwitcher {
+  border-top: 1px solid hsl(200, 6%, 38%);
+}

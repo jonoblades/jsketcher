@@ -1,0 +1,53 @@
+.root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.root.vertical {
+  flex-direction: column;
+}
+.root.vertical button {
+  margin: 2px 4px;
+}
+.root.vertical .separator {
+  height: 15px;
+}
+.root.horizontal button {
+  margin: 4px 2px;
+}
+.root.horizontal .separator {
+  width: 15px;
+}
+.root button {
+  background: #606060;
+  border: 1px solid #606060;
+  outline: none;
+  padding: 1px;
+  flex-basis: 36px;
+  display: flex;
+}
+.root button:focus {
+  border-color: #0065dc;
+  box-shadow: 0 0 0 2px rgba(3, 102, 214, 0.3);
+  outline: none;
+}
+.root button:hover {
+  background-color: #66727d;
+  border-color: #66727d;
+}
+.root button:active {
+  background-color: #383f45;
+  border-color: #383f45;
+}
+.root svg {
+  width: 34px;
+  height: 34px;
+}
+.root.compact svg {
+  width: 28px;
+  height: 28px;
+  transform: scale(0.9);
+}
+.root :global(.action-kind-Common) svg {
+  transform: scale(0.7);
+}

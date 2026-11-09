@@ -1,0 +1,25 @@
+.root {
+  color: hsl(0, 0%, 65%);
+}
+.tab {
+  padding: 4px 4px 4px 7px;
+  cursor: pointer;
+  border-right: 1px solid hsl(200, 6%, 38%);
+  display: inline-block;
+}
+.tab:hover {
+  color: hsl(0, 0%, 90%);
+}
+.tab.active {
+  background-color: hsl(200, 6%, 17%);
+  color: hsl(0, 0%, 90%);
+}
+.tab:first-child {
+  border-left: 1px solid hsl(200, 6%, 38%);
+}
+.expand:hover {
+  color: green;
+}
+.close:hover {
+  color: red;
+}

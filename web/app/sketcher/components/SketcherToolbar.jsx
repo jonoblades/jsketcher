@@ -1,5 +1,5 @@
 import React from 'react';
-import ls from './SketcherToolbar.less';
+import ls from './SketcherToolbar.css';
 import cx from 'classnames';
 import {SketcherActionButton} from "./SketcherActionButton";
 

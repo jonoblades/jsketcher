@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: hsl(0, 0%, 80%);
+  white-space: nowrap;
+}
+.button {
+  cursor: pointer;
+  padding: 5px 5px 4px 5px;
+  line-height: 1;
+}
+.button:hover {
+  background-color: #555;
+}
+.left,
+.right {
+  display: flex;
+  align-items: center;
+}
+.right {
+  flex-direction: row-reverse;
+}
+.left .button {
+  border-right: 1px solid hsl(200, 6%, 38%);
+  display: flex;
+  align-items: center;
+}
+.right .button {
+  border-left: 1px solid hsl(200, 6%, 38%);
+}
+.button.disabled {
+  color: hsl(0, 0%, 65%);
+}
+.button.disabled:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}

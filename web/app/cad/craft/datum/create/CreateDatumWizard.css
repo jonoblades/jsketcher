@@ -1,0 +1,13 @@
+.rot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rotControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rotControls > * {
+  margin-right: 5px;
+}

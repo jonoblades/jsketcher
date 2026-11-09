@@ -1,4 +1,4 @@
-import {StreamBase} from './base';
+import {StreamBase} from './streamBase';
 import {NOT_INITIALIZED} from './utils';
 
 export class CombineStream extends StreamBase {

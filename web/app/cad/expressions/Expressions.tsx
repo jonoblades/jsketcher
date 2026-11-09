@@ -1,6 +1,6 @@
 import React, {Fragment, useContext, useState} from 'react';
-import ls from './Expressions.less';
-import cmn from 'ui/styles/common.less';
+import ls from './Expressions.css';
+import cmn from 'ui/styles/common.css';
 import ToolButton from 'ui/components/ToolButton';
 import Fa from 'ui/components/Fa';
 import Row from 'ui/components/Row';

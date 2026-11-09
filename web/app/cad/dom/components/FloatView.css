@@ -1,0 +1,34 @@
+.root {
+  display: flex;
+}
+.root svg {
+  width: 16px;
+  height: 16px;
+}
+.root svg path {
+  stroke: white;
+}
+.tabs {
+  position: relative;
+  border-right: 1px solid hsl(200, 6%, 38%);
+  background-color: hsl(200, 6%, 17%);
+  font-size: 13px;
+}
+.tabs button {
+  display: block;
+  font-size: 13px;
+}
+.folder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.folderContent {
+  flex: 1;
+  display: flex;
+  width: 235px;
+  overflow: auto;
+}
+.folderContent > * {
+  flex: 1;
+}

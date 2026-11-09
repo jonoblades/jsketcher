@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import ls from './Widget.less';
+import ls from './Widget.css';
 import AdjustableAbs from './AdjustableAbs';
 import Fa from './Fa';
 import SymbolButton from './controls/SymbolButton';

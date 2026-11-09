@@ -1,6 +1,6 @@
 import React from 'react';
 import PlugableControlBar from './PlugableControlBar';
-import ls from './View3d.less';
+import ls from './View3d.css';
 import UISystem from './UISystem';
 import WizardManager from '../../craft/wizard/components/WizardManager';
 import FloatView from './FloatView';

@@ -6,7 +6,7 @@ import {StackSection} from "ui/components/controls/FormSection";
 import Button from "ui/components/controls/Button";
 import {IoIosRemoveCircleOutline} from "react-icons/io";
 import {IoAddCircleOutline} from "react-icons/io5";
-import ls from './CreateDatumWizard.less'
+import ls from './CreateDatumWizard.css'
 import ComboBoxControl, {ComboBoxOption} from "ui/components/controls/ComboBoxControl";
 import NumberControl from "ui/components/controls/NumberControl";
 import produce from "immer";

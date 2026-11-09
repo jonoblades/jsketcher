@@ -1,0 +1,216 @@
+.root {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-end;
+  height: 48px;
+}
+.timesplitter {
+  width: 4px;
+  height: 100%;
+  cursor: pointer;
+  align-items: flex-end;
+}
+.timesplitter .handle {
+  margin-left: -4px;
+  font-size: 20px;
+}
+.history {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  overflow-x: hidden;
+  padding: 0 5px 0 10px;
+}
+.scroller {
+  padding: 0 5px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.scroller:hover {
+  background-color: #BFBFBF;
+}
+.scroller:active {
+  background-color: #7e7e7e;
+  transition: 100ms;
+}
+.timesplitter.active:not(.eoh) {
+  background-color: #ff940b;
+}
+.handlePoly {
+  fill: #808080;
+  stroke: #000;
+}
+.handlePoly:hover {
+  fill: #ff940b;
+  stroke: #ff3a1e;
+}
+.timesplitter.active .handlePoly {
+  fill: #ff940b;
+  stroke: #ff3a1e;
+}
+.timesplitter.active.eoh .handlePoly {
+  fill: #BFBFBF;
+  stroke: #000;
+}
+.item {
+  height: 30px;
+  flex-shrink: 0;
+  margin: 2px 0;
+  padding: 2px;
+  border: #2e2e2e 1px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  cursor: pointer;
+}
+.item:active {
+  transition: 300ms;
+}
+.disabled {
+  background-color: #828282;
+  border-color: #a7a7a7;
+  color: #a7a7a7;
+}
+.controlBtn {
+  height: 30px;
+  flex-shrink: 0;
+  margin: 2px 0;
+  padding: 2px;
+  border: #2e2e2e 1px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  cursor: pointer;
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: #64808b;
+}
+.controlBtn:active {
+  transition: 300ms;
+}
+.controlBtn:hover {
+  background-color: #489;
+}
+.controlBtn:active {
+  background-color: #5dc4da;
+}
+.controlBtn.disabled {
+  background-color: #828282;
+  border-color: #a7a7a7;
+  color: #a7a7a7;
+}
+.historyItem {
+  height: 30px;
+  flex-shrink: 0;
+  margin: 2px 0;
+  padding: 2px;
+  border: #2e2e2e 1px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  cursor: pointer;
+  background-color: #737373;
+  position: relative;
+}
+.historyItem:active {
+  transition: 300ms;
+}
+.historyItem:hover {
+  background-color: #4d4d4d;
+}
+.historyItem:active {
+  background-color: #9c9c9c;
+}
+.historyItem.disabled {
+  background-color: #828282;
+  border-color: #a7a7a7;
+  color: #a7a7a7;
+}
+.historyItem.selected {
+  border-color: #00ffe4;
+}
+.historyItem.inProgress {
+  background-color: #648268;
+}
+.historyItem .opIndex {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  text-shadow: 0px -1px 0 #000, 0px 1px 0 #000, 1px 0px 0 #000, -1px 0px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.historyItem .opIcon {
+  margin-left: -6px;
+  margin-top: -3px;
+}
+.historyItem .opInfo {
+  position: absolute;
+  bottom: 20px;
+}
+.futureItem {
+  height: 30px;
+  flex-shrink: 0;
+  margin: 2px 0;
+  padding: 2px;
+  border: #2e2e2e 1px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  cursor: pointer;
+  background-color: #648268;
+  border: #ffffff88 1px dashed;
+  margin-right: 4px;
+  cursor: auto;
+}
+.futureItem:active {
+  transition: 300ms;
+}
+.add {
+  height: 30px;
+  flex-shrink: 0;
+  margin: 2px 0;
+  padding: 2px;
+  border: #2e2e2e 1px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  cursor: pointer;
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: #64808b;
+  border: #ffffff88 1px dashed;
+  color: #ffffff88;
+}
+.add:active {
+  transition: 300ms;
+}
+.add:hover {
+  background-color: #489;
+}
+.add:active {
+  background-color: #5dc4da;
+}
+.add.disabled {
+  background-color: #828282;
+  border-color: #a7a7a7;
+  color: #a7a7a7;
+}
+.add:hover {
+  border-color: #fff;
+}
+.add.disabled {
+  background-color: #828282;
+  border-color: #a7a7a7;
+  color: #a7a7a7;
+}

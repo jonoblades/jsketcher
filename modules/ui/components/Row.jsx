@@ -1,5 +1,5 @@
 import React from 'react';
-import ls from './Row.less';
+import ls from './Row.css';
 import cx from 'classnames';
 
 export default function Row({className, children, ...props}) {

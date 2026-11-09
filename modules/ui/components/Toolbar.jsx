@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import ls from './Toolbar.less';
+import ls from './Toolbar.css';
 
 export default function Toolbar({children, className, size, medium, vertical, flat, ...props}) {
   return <div

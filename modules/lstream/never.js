@@ -1,4 +1,4 @@
-import {StreamBase} from './base';
+import {StreamBase} from './streamBase';
 import {NOOP} from '../gems/func';
 
 export class NeverStream extends StreamBase {

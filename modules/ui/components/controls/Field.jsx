@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 
-import ls from './Field.less'
+import ls from './Field.css'
 import cx from 'classnames';
 
 export const FieldId = React.createContext(-1);

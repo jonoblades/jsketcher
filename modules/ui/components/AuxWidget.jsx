@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import ls from './AuxWidget.less';
+import ls from './AuxWidget.css';
 import AdjustableAbs from './AdjustableAbs';
 
 export default function AuxWidget(props) {

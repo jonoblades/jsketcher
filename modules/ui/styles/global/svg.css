@@ -1,0 +1,35 @@
+svg .line {
+  stroke: white;
+  stroke-width: 4;
+}
+svg .marked {
+  stroke: red;
+  stroke-width: 4;
+}
+svg .generated {
+  stroke: #c5bbff;
+  stroke-width: 4;
+}
+svg .point {
+  stroke: black;
+  fill: black;
+}
+svg .annotation {
+  stroke: #9fffa3;
+  stroke-width: 2;
+}
+svg .annotation.arrow {
+  fill: #9fffa3;
+}
+svg .equal {
+  stroke: #bcffc1;
+  fill: #bcffc1;
+  stroke-width: 6;
+}
+svg .construction {
+  stroke: #aaaaaa;
+  stroke-width: 2;
+}
+svg .symbol {
+  fill: white;
+}

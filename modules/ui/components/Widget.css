@@ -1,0 +1,36 @@
+.root {
+  color: #fff;
+  background-color: rgba(40, 40, 40, 0.95);
+  border: solid 1px #000;
+  border-radius: 5px;
+}
+.flatBottom {
+  border-radius: 5px 5px 0 0;
+}
+.flatTop {
+  border-radius: 0 0 5px 5px;
+}
+.flatRight {
+  border-radius: 5px 0 0 5px;
+}
+.flatLeft {
+  border-radius: 0 5px 5px 0;
+}
+.root {
+  padding: 5px 5px 10px 15px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  font-size: 16px;
+}
+.headerButtons {
+  font-size: 20px;
+  margin-left: 10px;
+}
+.content {
+  padding-top: 5px;
+}

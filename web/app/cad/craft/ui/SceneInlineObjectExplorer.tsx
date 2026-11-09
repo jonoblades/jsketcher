@@ -6,7 +6,7 @@ import {useStream, useStreamWithPatcher} from "ui/effects";
 import {MObject} from "cad/model/mobject";
 import {SceneInlineDelineation, SceneInlineSection} from "ui/components/SceneInlineSection";
 import {GenericExplorerControl, GenericExplorerNode} from "ui/components/GenericExplorer";
-import ls from "cad/craft/ui/ObjectExplorer.less";
+import ls from "cad/craft/ui/ObjectExplorer.css";
 import Fa from "ui/components/Fa";
 import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
 import {ModelButtonBehavior} from "cad/craft/ui/ModelButtonBehaviour";

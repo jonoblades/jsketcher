@@ -1,5 +1,5 @@
 import React from 'react';
-import ls from './Section.less';
+import ls from './Section.css';
 import Fa from './Fa';
 
 export const TabContext = React.createContext(0);

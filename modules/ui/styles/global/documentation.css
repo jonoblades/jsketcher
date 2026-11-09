@@ -1,0 +1,17 @@
+.documentation-content {
+  height: 100%;
+  width: 100%;
+}
+.documentation-toolbar {
+  display: flex;
+  color: white;
+  padding-left: 3px;
+}
+.documentation-toolbar * {
+  padding: 3px;
+  margin: 3px 3px 3px 0;
+}
+.documentation-toolbar svg {
+  width: 24px;
+  height: 24px;
+}

@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 
 import View3d from './View3d';
 
-import ls from './AppTabs.less';
+import ls from './AppTabs.css';
 
 import TabSwitcher, {Tab} from 'ui/components/TabSwticher';
 import Card from "ui/components/Card";

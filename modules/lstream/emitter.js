@@ -1,4 +1,4 @@
-import {StreamBase} from './base';
+import {StreamBase} from './streamBase';
 
 const READY = 0;
 const EMITTING = 1;

@@ -1,0 +1,7 @@
+.root {
+  display: flex;
+  justify-content: flex-end;
+}
+.root > *:not(:first-child) {
+  margin-left: 5px;
+}

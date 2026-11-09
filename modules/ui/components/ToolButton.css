@@ -1,0 +1,28 @@
+.root {
+  margin: 3px;
+  border-radius: 3px;
+  padding: 0.4em 0.3em;
+  cursor: pointer;
+  background-color: hsl(200, 6%, 38%);
+  color: #fff;
+  outline: none;
+}
+.root:hover {
+  background-color: hsl(200, 6%, 33%) !important;
+}
+.root:active {
+  transition: 200ms;
+  background-color: hsl(200, 6%, 43%) !important;
+}
+.root.pressed {
+  background-color: #285f7a !important;
+}
+.accent {
+  background-color: #2B7D2B;
+}
+.highlight {
+  background-color: #003f5d;
+}
+.danger {
+  background-color: #b00;
+}

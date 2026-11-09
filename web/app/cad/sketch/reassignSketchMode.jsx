@@ -1,4 +1,3 @@
-import React from 'react';
 import mapContext from 'ui/mapContext';
 import Button from 'ui/components/controls/Button';
 

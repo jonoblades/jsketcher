@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import ls from './ContextualControls.css';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import { matchAvailableActions } from "../actions";
 import { useStream } from "ui/effects";
 import { MatchIndex, matchSelection } from "../selectionMatcher";
@@ -80,7 +80,7 @@ export function ContextualControls() {
           <span className={ls.objectIcon}><ObjectIcon object={s} /></span>
           {getObjectRole(s)}
           <span className={cx(ls.objectTag, s.marked && ls.selected)}>{s.simpleClassName}&nbsp;<span>{s.id}</span> </span>
-          <span className={ls.removeButton} onClick={() => ctx.viewer.remove(s)}><Fa icon='times'/></span>
+          <span className={ls.removeButton} onClick={() => ctx.viewer.remove(s)}><MaterialIcon icon='times'/></span>
         </span>
       </div>)
     }

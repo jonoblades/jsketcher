@@ -3,7 +3,7 @@ import React from 'react';
 import ls from './Window.css'
 import cx from 'classnames';
 import {NOOP} from 'gems/func';
-import {FaTimes} from 'react-icons/fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 
 export interface WindowProps {
 
@@ -22,12 +22,12 @@ export interface WindowProps {
   enableResize?: boolean;
   children?: any;
   title: string,
-  icon?: JSX.Element,
-  controlButtons?: JSX.Element;
+  icon?: React.JSX.Element,
+  controlButtons?: React.JSX.Element;
   minimizable?: boolean;
   onClose: () => void;
-  props?: JSX.IntrinsicAttributes;
-  footer?: JSX.Element;
+  props?: React.JSX.IntrinsicAttributes;
+  footer?: React.JSX.Element;
   compact?: boolean;
   onEscapePressed?: () => any,
   onEnterPressed?: () => any
@@ -55,10 +55,11 @@ export default class Window extends React.Component<WindowProps> {
     const onKeyDown = e => {
       switch (e.keyCode) {
         case 27 :
-          onEscapePressed ? onEscapePressed() : onClose();
+          if (onEscapePressed) onEscapePressed();
+          else onClose();
           break;
         case 13 :
-          onEnterPressed();
+          if (onEnterPressed) onEnterPressed();
           break;
       }
     };
@@ -69,7 +70,7 @@ export default class Window extends React.Component<WindowProps> {
         <div className={ls.controlButtons}>
           {controlButtons}
           {minimizable &&  <WindowControlButton onClick={onClose}>_</WindowControlButton>}
-          <WindowControlButton danger={true} onClick={onClose}><FaTimes /></WindowControlButton>
+          <WindowControlButton danger={true} onClick={onClose}><MaterialIcon icon="close" /></WindowControlButton>
         </div>
       </div>
       <div className={cx(ls.content, 'compact-scroll')}>

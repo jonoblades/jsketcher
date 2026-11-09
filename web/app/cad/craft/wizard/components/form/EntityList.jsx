@@ -2,12 +2,12 @@ import React, {useContext} from 'react';
 import ls from './EntityList.css';
 import Label from 'ui/components/controls/Label';
 import Field from 'ui/components/controls/Field';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {attachToForm} from './Form';
 import {camelCaseSplitToStr} from 'gems/camelCaseSplit';
 import {EMPTY_ARRAY, removeInPlace} from 'gems/iterables';
 import {ReactApplicationContext} from "cad/dom/ReactApplicationContext";
-import produce from "immer";
+import {produce} from "immer";
 import {FiEdit} from "react-icons/fi";
 import {MFace} from "cad/model/mface";
 import {ModelIcon} from "cad/craft/ui/ModelIcon";
@@ -52,7 +52,7 @@ function EntityList(props) {
 
             {entityRenderer(entity)}
           </span>
-            {!readOnly && <span className={ls.rm} onClick={() => deselect(entity)}> <Fa icon='times'/></span>}
+            {!readOnly && <span className={ls.rm} onClick={() => deselect(entity)}> <MaterialIcon icon='times'/></span>}
         </span>
       })}
     </div>
@@ -81,4 +81,3 @@ function asArray(val) {
 }
 
 const _arr = [];
-

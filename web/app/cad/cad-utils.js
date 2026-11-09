@@ -102,7 +102,6 @@ export function createLine(a, b, color) {
 
 export function createSolidMaterial() {
   return new THREE.MeshPhongMaterial({
-    vertexColors: THREE.FaceColors,
     color: FACE_COLOR,
     shininess: 0,
     polygonOffset : true,

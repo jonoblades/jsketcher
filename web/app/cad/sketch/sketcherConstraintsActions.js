@@ -139,7 +139,7 @@ export default [
     appearance: {
       info: 'Lock Constraint',
       label: 'lock',
-      cssIcons: ['lock']
+      materialIcons: ['lock']
     },
     invoke: ({services}) => {
       const viewer = services.sketcher.inPlaceEditor.viewer;
@@ -216,7 +216,7 @@ export default [
     appearance: {
       info: 'Mirror Objects off of a Line',
       label: 'mirror',
-      cssIcons: ['star-half-o']
+      materialIcons: ['star-half-o']
     },
     invoke: ({services}) => {
       const viewer = services.sketcher.inPlaceEditor.viewer;

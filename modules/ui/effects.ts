@@ -2,7 +2,7 @@ import {useCallback, useContext, useEffect, useState} from 'react';
 import {StreamsContext} from "./streamsContext";
 import {ApplicationContext} from "cad/context";
 import {Emitter, Stream} from "lstream";
-import produce from "immer";
+import {produce} from "immer";
 
 export function useStream<T>(getStream: Stream<T> | ((ctx: ApplicationContext) => Stream<T>)) : T {
 

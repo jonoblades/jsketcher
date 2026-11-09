@@ -1,29 +1,7 @@
-// Header for verb for JavaScript
-// Borrowed from browserify, this header supports AMD (define) and common js (require) style modules
-
-(function(f){
-    if(typeof exports==="object"&&typeof module!=="undefined"){
-        module.exports=f()
-    } else if(typeof define==="function"&&define.amd){
-        define([],f)
-    } else {
-        var g;
-        if(typeof window!=="undefined"){
-            g=window
-        } else if(typeof global!=="undefined"){
-            g=global
-        } else if(typeof self!=="undefined"){
-            g=self
-        } else{
-            g=this
-        }
-
-        g.verb = f()
-    }
-})(function(){
+const verb = (function(){
     var verb = {};
 
-    var global = this;
+    var global = globalThis;
 
     var isBrowser = new Function("try {return this===window;}catch(e){ return false;}");
     var isNode=new Function("try {return this===global;}catch(e){return false;}");
@@ -31,8 +9,9 @@
 
     // node.js context, but not WebWorker
     if ( isNode() && !isWebworker() ){
-        console.log(typeof window);
-        Worker = require('webworker-threads').Worker;
+        if (typeof Worker === 'undefined') {
+            throw new Error('Node.js Worker support is unavailable in this browser bundle');
+        }
     }
 
     // WebWorker or node.js context
@@ -7459,5 +7438,8 @@ verb_Verb.main();
 
 
     return verb;
+})();
 
-});
+globalThis.verb = verb;
+
+export default verb;

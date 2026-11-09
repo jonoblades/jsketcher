@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SketchPicker} from 'react-color';
+import {HexColorPicker} from 'react-colorful';
 import Button from "ui/components/controls/Button";
 import {CgColorPicker} from "react-icons/cg";
 import {Dialog} from "ui/components/Dialog";
@@ -38,11 +38,8 @@ export function ColorControl(props: ColorControlProps) {
 }
 
 function ColorDialog({onChange, value, title, onClose}) {
-  const change = (color) => {
-    onChange(color.hex);
-  }
   return <Dialog title={title||'color'} onClose={onClose} compact>
-    <SketchPicker color={value} onChange={change} onChangeComplete={change}/>
+    <HexColorPicker color={value} onChange={onChange}/>
   </Dialog>
 }
 

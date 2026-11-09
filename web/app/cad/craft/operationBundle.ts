@@ -129,7 +129,7 @@ export interface Operation<R> extends OperationDescriptor<R>{
   schema: OperationSchema;
 }
 
-type OpIcon = IconDeclaration | IconType | string | ((props: any) => JSX.Element);
+type OpIcon = IconDeclaration | IconType | string | ((props: any) => React.JSX.Element);
 
 type MaterializedParams = any;
 
@@ -240,5 +240,4 @@ export interface OperationBundleContext {
 }
 
 export const BundleName = "@Operation";
-
 

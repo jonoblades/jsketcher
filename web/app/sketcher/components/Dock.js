@@ -1,4 +1,5 @@
 import {createElement} from "../../utils/domUtils";
+import {materialIconName} from 'ui/components/materialIconNames';
 
 export class Dock {
 
@@ -21,7 +22,7 @@ export class Dock {
       view.node = createElement('div', undefined, 'dock-node');
       const caption = createElement('div', undefined, 'tool-caption');
       caption.appendChild(createElement('span', undefined, 'txt', viewDef.name.toUpperCase()));
-      caption.appendChild(createElement('i', undefined, 'fa fa-'+viewDef.icon));
+      caption.appendChild(createElement('span', undefined, 'material-symbols-rounded', materialIconName(viewDef.icon)));
       view.node.appendChild(caption);
       // view.node.style.display = 'none';
       this.dockEl.appendChild(view.node);
@@ -80,9 +81,8 @@ export class Dock {
 
 export function dockBtn(name, icon) {
   const btn = createElement('span', undefined, 'dock-btn');
-  btn.appendChild(createElement('i', undefined, 'fa fa-' + icon));
+  btn.appendChild(createElement('span', undefined, 'material-symbols-rounded', materialIconName(icon)));
   btn.appendChild(createElement('span', undefined, 'txt', name));
   return btn;
 }
-
 

@@ -5,7 +5,7 @@ import {ReactApplicationContext} from "../../dom/ReactApplicationContext";
 import cx from 'classnames';
 import {NoIcon} from "../../../sketcher/icons/NoIcon";
 import ls from "../../../sketcher/components/ConstraintExplorer.css";
-import Fa from "ui/components/Fa";
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {ApplicationContext} from "cad/context";
 import {StepByStepSimulation} from "./StepByStepSimulation";
 import {AssemblyConstraintDefinition} from "../assemblyConstraint";
@@ -83,7 +83,7 @@ export function AssemblyConstraintButton({prefix='', constraint: c, ...props}: {
     <span className={ls.objectTag}>
         {prefix} {schema.name}
       </span>
-    <span className={ls.removeButton} onClick={() => remove(c)}><Fa icon='times'/></span>
+    <span className={ls.removeButton} onClick={() => remove(c)}><MaterialIcon icon='times'/></span>
 
   </div>
 

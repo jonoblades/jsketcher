@@ -7,7 +7,6 @@ import * as vec from 'math/vec';
 
 export function createSolidMaterial(skin) {
   return new THREE.MeshPhongMaterial(Object.assign({
-    // vertexColors: THREE.FaceColors,
     color: 0xaeaeae,
     shininess: 0,
     polygonOffset : true,

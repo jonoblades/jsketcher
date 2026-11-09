@@ -1,6 +1,7 @@
 import * as test from '../../test'
 import {deepMerge} from '../coreTests/utils/deep-merge'
 import {Matrix3x4} from "math/matrix";
+import fixtures from './brepFixtures.js';
 
 const OPERANDS_MODE = false;
 
@@ -90,7 +91,7 @@ function ddt(env, app, name) {
 }
 
 function compare(env, app, name, result) {
-  const out = require('./data/brep/' + name + '/out.json');
+  const out = fixtures[name].out;
   const resultData = shellToData(app.TPI.brep.IO, out.format, result);
   env.assertData(out, resultData);
 }
@@ -104,16 +105,12 @@ function shellToData(io, format, shell) {
 }
 
 function getInput(name) {
-  const input = readInput(name);
+  const input = fixtures[name].in;
   if (input.overrides) {
-    const overrides = readInput(input.overrides);
+    const overrides = fixtures[input.overrides].in;
     return deepMerge({}, overrides, input);
   }
   return input;
-}
-
-function readInput(name) {
-  return require('./data/brep/' + name + '/in.json');
 }
 
 function materialize(tpi, def) {

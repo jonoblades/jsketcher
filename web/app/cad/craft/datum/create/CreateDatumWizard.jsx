@@ -9,7 +9,7 @@ import {IoAddCircleOutline} from "react-icons/io5";
 import ls from './CreateDatumWizard.css'
 import ComboBoxControl, {ComboBoxOption} from "ui/components/controls/ComboBoxControl";
 import NumberControl from "ui/components/controls/NumberControl";
-import produce from "immer";
+import {produce} from "immer";
 
 export default function CreateDatumWizard() {
   return <Group>

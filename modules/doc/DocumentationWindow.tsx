@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {stream} from "lstream";
 import Window from "ui/components/Window";
 import {useStream} from "ui/effects";
-import marked from 'marked';
+import {marked} from 'marked';
 import {AiOutlineHome} from "react-icons/ai";
 import {RiArrowGoBackLine} from "react-icons/ri";
 

@@ -103,20 +103,7 @@ export function LocationDialog() {
       </Group>
     </Folder>
     <Folder title='Rotation'>
-      <Group>
-        {/*<Field active={false} name='Azimuth'>*/}
-        {/*  <Label>Axis Azimuth:</Label>*/}
-        {/*  <NumberControl onChange={setAzimuth} value={location.rotationAxisAzimuth / DEG_RAD} />*/}
-        {/*</Field>*/}
-        {/*<Field active={false} name='Inclination'>*/}
-        {/*  <Label>Axis Inclination:</Label>*/}
-        {/*  <NumberControl onChange={setInclination} value={location.rotationAxisInclination / DEG_RAD} />*/}
-        {/*</Field>*/}
-        {/*<Field active={false} name='Angle'>*/}
-        {/*  <Label>Angle:</Label>*/}
-        {/*  <NumberControl onChange={setAngle} value={location.rotationAxisAngle / DEG_RAD} />*/}
-        {/*</Field>*/}
-      </Group>
+      <Group>{null}</Group>
     </Folder>
 
 

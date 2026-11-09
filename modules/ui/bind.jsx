@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import {useContext} from 'react';
 import {useStreamWithUpdater} from "./effects";
 import {ReactApplicationContext} from "cad/dom/ReactApplicationContext";
 

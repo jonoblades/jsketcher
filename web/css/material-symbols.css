@@ -1,0 +1,23 @@
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded Variable';
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.material-symbols-rounded-fixed-width {
+  width: 1.25em;
+  text-align: center;
+}

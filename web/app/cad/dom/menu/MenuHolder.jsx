@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu, {MenuItem, MenuSeparator} from 'ui/components/Menu';
 import Filler from 'ui/components/Filler';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {ActionButtonBehavior} from '../../actions/ActionButtonBehavior';
 import connect from 'ui/connect';
 import {combine, merger} from 'lstream';
@@ -26,7 +26,7 @@ function ActionMenu({actions, keymap, ...menuState}) {
   </Menu>;
 }
 
-function ActionMenuItem({label, cssIcons, icon, icon32, icon96, enabled, hotKey, visible, actionId, ...props}) {
+function ActionMenuItem({label, materialIcons, icon, icon32, icon96, enabled, hotKey, visible, actionId, ...props}) {
   if (!visible) {
     return null;
   }
@@ -48,8 +48,8 @@ function ActionMenuItem({label, cssIcons, icon, icon32, icon96, enabled, hotKey,
       if (!enabled) {
         style.filter = 'grayscale(90%)';
       }
-    } else if (cssIcons) {
-      renderedIcon = <Fa fw fa={cssIcons} />;
+    } else if (materialIcons) {
+      renderedIcon = <MaterialIcon fw icons={materialIcons} />;
     }
   }
 

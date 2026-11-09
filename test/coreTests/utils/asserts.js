@@ -1,4 +1,3 @@
-import {createFailError} from '../test';
 import sketchObjectGlobalId from '../../../web/app/cad/sketch/sketchObjectGlobalId';
 
 export function fail(msg, optionalMsg) {

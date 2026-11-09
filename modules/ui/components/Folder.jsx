@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import ls from './Folder.css'
-import Fa from "./Fa";
+import MaterialIcon from "./MaterialIcon";
 import cx from "classnames";
 
 export function InnerFolder(props) {
@@ -36,7 +36,7 @@ export function Title({children, isClosed, onClick, className}) {
     cursor: 'pointer'
   } : {};
   return <div className={cx(ls.title, className)} onClick={onClick}  style={titleCss}>
-    <span className={ls.handle}><Fa fw icon={isClosed ? 'chevron-right' : 'chevron-down'}/></span>
+    <span className={ls.handle}><MaterialIcon fw icon={isClosed ? 'chevron-right' : 'chevron-down'}/></span>
     {' '}{children}
   </div>;
 }

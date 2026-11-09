@@ -1,5 +1,5 @@
-import 'babel-polyfill';
-import 'font-awesome/css/font-awesome.min.css';
+import '@fontsource-variable/material-symbols-rounded';
+import '../css/material-symbols.css';
 
 import startApplication from "./cad/init/startApplication";
 

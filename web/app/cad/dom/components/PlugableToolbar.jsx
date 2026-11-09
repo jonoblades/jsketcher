@@ -1,5 +1,5 @@
 import React from 'react';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import Toolbar, {ToolbarBraker, ToolbarButton, ToolbarGroup, ToolbarSplitter} from 'ui/components/Toolbar';
 import ImgIcon from 'ui/components/ImgIcon';
 import {toIdAndOverrides} from '../../actions/actionRef';
@@ -34,7 +34,7 @@ export function ToolbarActionButtons({actions, showTitles, size}) {
   });
 }
 
-function ActionButton({label, icon, icon96, icon32, cssIcons, symbol, size = 'large', noLabel, enabled, visible, actionId, ...props}) {
+function ActionButton({label, icon, icon96, icon32, materialIcons, symbol, size = 'large', noLabel, enabled, visible, actionId, ...props}) {
   if (!visible) {
     return null;
   }
@@ -46,8 +46,8 @@ function ActionButton({label, icon, icon96, icon32, cssIcons, symbol, size = 'la
   }
   if (!icon) {
     if (smallOrMedium) {
-      if (cssIcons) {
-        icon = <Fa fa={cssIcons} fw />;
+      if (materialIcons) {
+        icon = <MaterialIcon icons={materialIcons} fw />;
       } else if (icon32) {
         icon = <ImgIcon url={icon32} size={size === 'small' ? 16 : 24} />;
       }

@@ -6,27 +6,14 @@ import {finishHistoryEditing, removeAndDropDependants} from '../craftHistoryUtil
 import mapContext from 'ui/mapContext';
 import ImgIcon from 'ui/components/ImgIcon';
 import cx from 'classnames';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {combine} from 'lstream';
 import {EMPTY_OBJECT} from 'gems/objects';
 import {aboveElement} from 'ui/positionUtils';
 import {resolveAppearance} from "cad/craft/operationHelper";
 import {menuAboveElementHint} from "cad/dom/menu/menuUtils";
 
-@connect(streams => combine(streams.craft.modifications, streams.operation.registry, streams.wizard.insertOperation)
-  .map(([modifications, operationRegistry, insertOperationReq]) => ({
-    ...modifications,
-    operationRegistry,
-    inProgressOperation: !!insertOperationReq,
-    getOperation: type => operationRegistry[type]||EMPTY_OBJECT
-  })))
-@mapContext(({streams, services}) => ({
-  remove: atIndex => streams.craft.modifications.update(modifications => removeAndDropDependants(modifications, atIndex)),
-  cancel: () => streams.craft.modifications.update(modifications => finishHistoryEditing(modifications)),
-  setHistoryPointer: pointer => streams.craft.modifications.update(({history}) => ({history, pointer})),
-  rebuild: () => services.craft.rebuild()
-}))
-export default class HistoryTimeline extends React.Component {
+class HistoryTimeline extends React.Component {
 
   render() {
     const {history, pointer, setHistoryPointer, rebuild, getOperation, inProgressOperation} = this.props;
@@ -34,7 +21,7 @@ export default class HistoryTimeline extends React.Component {
     const eof = history.length-1;
     return <div className={cx(ls.root, ' small-typography')} ref={this.keepRef}>
       <Controls rebuild={rebuild} history={history} pointer={pointer} eoh={eof} setHistoryPointer={this.setHistoryPointerAndRequestScroll}/>
-      <div className={ls.scroller} onClick={e => scrolly.scrollLeft -= 60}><Fa icon='caret-left'/></div>
+      <div className={ls.scroller} onClick={e => scrolly.scrollLeft -= 60}><MaterialIcon icon='caret-left'/></div>
       <div className={ls.history} ref={el => scrolly = el}>
         {history.map((m, i) => <React.Fragment key={i}>
           <Timesplitter active={i-1 === pointer} onClick={() => setHistoryPointer(i-1)} />
@@ -48,7 +35,7 @@ export default class HistoryTimeline extends React.Component {
         <Timesplitter eoh active={eof === pointer} onClick={() => setHistoryPointer(eof)}/>
         {inProgressOperation && eof === pointer && <FutureItem appearance={getOperation(inProgressOperation).appearance}/>}
       </div>
-      <div className={ls.scroller} onClick={e => scrolly.scrollLeft += 60}><Fa icon='caret-right'/></div>
+      <div className={ls.scroller} onClick={e => scrolly.scrollLeft += 60}><MaterialIcon icon='caret-right'/></div>
       <AddButton />
     </div>;
   }
@@ -75,6 +62,21 @@ export default class HistoryTimeline extends React.Component {
     })
   }
 }
+
+export default connect(streams => combine(streams.craft.modifications, streams.operation.registry, streams.wizard.insertOperation)
+  .map(([modifications, operationRegistry, insertOperationReq]) => ({
+    ...modifications,
+    operationRegistry,
+    inProgressOperation: !!insertOperationReq,
+    getOperation: type => operationRegistry[type]||EMPTY_OBJECT
+  })))(
+  mapContext(({streams, services}) => ({
+    remove: atIndex => streams.craft.modifications.update(modifications => removeAndDropDependants(modifications, atIndex)),
+    cancel: () => streams.craft.modifications.update(modifications => finishHistoryEditing(modifications)),
+    setHistoryPointer: pointer => streams.craft.modifications.update(({history}) => ({history, pointer})),
+    rebuild: () => services.craft.rebuild()
+  }))(HistoryTimeline)
+);
 
 
 function FutureItem({appearance}) {
@@ -109,16 +111,16 @@ function Controls({rebuild, history, pointer, eoh, setHistoryPointer, }) {
   const noF = pointer===eoh;
   return <React.Fragment>
     <div className={cx(ls.controlBtn, !history.length&&ls.disabled)} onClick={rebuild}>
-      <Fa icon='repeat' fw/>
+      <MaterialIcon icon='repeat' fw/>
     </div>
     <div className={cx(ls.controlBtn, noB&&ls.disabled)} onClick={noB?undefined :() => setHistoryPointer(pointer-1)}>
-      <Fa icon='step-backward' fw/>
+      <MaterialIcon icon='step-backward' fw/>
     </div>
     <div className={cx(ls.controlBtn, noF&&ls.disabled)} onClick={noF?undefined :() => setHistoryPointer(pointer+1)}>
-      <Fa icon='step-forward' fw/>
+      <MaterialIcon icon='step-forward' fw/>
     </div>
     <div className={cx(ls.controlBtn, noF&&ls.disabled)} onClick={noF?undefined :() => setHistoryPointer(eoh)}>
-      <Fa icon='fast-forward' fw/>
+      <MaterialIcon icon='fast-forward' fw/>
     </div>
   </React.Fragment>;
 }
@@ -148,7 +150,7 @@ const AddButton = mapContext((ctx) => ({
 }))(
   function AddButton({showCraftMenu}) {
     return <div className={ls.add} onClick={showCraftMenu}>
-      <Fa icon='plus' fw/>
+      <MaterialIcon icon='plus' fw/>
     </div>;
   }
 );

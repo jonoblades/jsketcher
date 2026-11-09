@@ -2,7 +2,7 @@ import React, {Fragment, useContext, useState} from 'react';
 import ls from './Expressions.css';
 import cmn from 'ui/styles/common.css';
 import ToolButton from 'ui/components/ToolButton';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import Row from 'ui/components/Row';
 import bind from 'ui/bind';
 import cx from 'classnames';
@@ -31,10 +31,10 @@ export default function Expressions() {
   return <div className={ls.root}>
 
     <Row className={ls.switcher}>
-      {tabBtn('Script', <Fa fw icon='pencil' />)}
-      {tabBtn('Table', <Fa fw icon='table' />)}
-      {errors.length > 0 && <span><Fa icon='warning' className={cx(cmn.dangerColor, cmn.inlineBlock)} /></span>}
-      {!synced && <ReevaluateActionButton type='accent' className={cmn.floatRight}><Fa fw icon='check'/></ReevaluateActionButton>}
+      {tabBtn('Script', <MaterialIcon fw icon='pencil' />)}
+      {tabBtn('Table', <MaterialIcon fw icon='table' />)}
+      {errors.length > 0 && <span><MaterialIcon icon='warning' className={cx(cmn.dangerColor, cmn.inlineBlock)} /></span>}
+      {!synced && <ReevaluateActionButton type='accent' className={cmn.floatRight}><MaterialIcon fw icon='check'/></ReevaluateActionButton>}
     </Row>
 
     <div className={ls.workingArea}>
@@ -43,7 +43,7 @@ export default function Expressions() {
 
       {activeTab === 'Table' && <VarTable errors={errors}/>}
 
-      {errors.length > 0 && <Folder title={<Fragment><Fa icon='warning' className={cx(cmn.dangerColor)} /> Script Errors</Fragment>}>
+      {errors.length > 0 && <Folder title={<Fragment><MaterialIcon icon='warning' className={cx(cmn.dangerColor)} /> Script Errors</Fragment>}>
         <Stack>
           {errors.map(err => <div key={err.line}>
             line {err.line + 1}: {err.message}

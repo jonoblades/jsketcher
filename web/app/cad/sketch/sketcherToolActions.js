@@ -24,7 +24,7 @@ export default [
     appearance: {
       label: 'pan tool',
       info: 'switch to sketch pan mode',
-      cssIcons: ['arrows'],
+      materialIcons: ['arrows'],
     },
     invoke: ({services}) => viewer(services).toolManager.releaseControl()
   },

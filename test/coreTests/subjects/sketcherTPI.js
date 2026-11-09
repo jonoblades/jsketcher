@@ -1,6 +1,6 @@
 import * as sketcher_utils from '../utils/sketcherUtils'
 import {genSerpinskiImpl} from '../../../web/app/utils/genSerpinski';
-import {distance} from 'math/commons';
+import {distance} from 'math/distance';
 
 export function createSubjectFromInPlaceSketcher(ctx) {
   const sketcherCtx = ctx.services.sketcher.inPlaceEditor.sketcherAppContext;

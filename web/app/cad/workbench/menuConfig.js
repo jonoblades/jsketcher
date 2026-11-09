@@ -3,27 +3,27 @@ import {GiCube} from "react-icons/gi";
 export default [
   {
     id: 'file',
-    cssIcons: ['file'],
+    materialIcons: ['file'],
     actions: ['NewProject', '-', 'Save', 'StlExport', 'ImagePngExport', 'NativeFormatExport', '-', 'NativeFormatImport', 
               'NativeFormatImportAs', '-', 'CloneCurrentProject', '-', 'ReassignSketch']
   },
   {
     id: 'craft',
-    cssIcons: ['magic'],
+    materialIcons: ['magic'],
     info: 'set of available craft operations on a solid',
     actions: ['EXTRUDE', 'CUT', 'REVOLVE', 'LOFT', 'SHELL', 'FILLET', 'DATUM_CREATE', ]
   },
   {
     id: 'primitives',
     label: 'add',
-    cssIcons: ['cube'],
+    materialIcons: ['cube'],
     info: 'set of available solid creation operations',
     actions: ['PLANE', "primitive_cylinder", "primitive_box", "primitive_cone", "primitive_sphere", "primitive_torus"]
   },
   {
     id: 'views',
     label: 'views',
-    cssIcons: ['camera'],
+    materialIcons: ['camera'],
     info: 'switching camera views',
     actions: ['StandardViewFront', 'StandardViewBack', 'StandardViewLeft', 'StandardViewRight', 
       'StandardViewTop', 'StandardViewBottom', 'StandardView3Way']
@@ -38,14 +38,14 @@ export default [
   {
     id: 'boolean',
     label: 'bool',
-    cssIcons: ['pie-chart'],
+    materialIcons: ['pie-chart'],
     info: 'set of available boolean operations',
     actions: ['INTERSECTION', 'SUBTRACT', 'UNION']
   },
   {
     id: 'main',
     label: 'start',
-    cssIcons: ['rocket'],
+    materialIcons: ['rocket'],
     info: 'common set of actions',
     actions: ['EXTRUDE', 'CUT', 'REVOLVE', 'LOFT', 'FILLET', '-', 
       'PLANE', 'BOX', 'SPHERE', 'CONE', 'CYLINDER', 'TORUS', '-',
@@ -54,7 +54,7 @@ export default [
   {
     id: 'datum',
     label: 'datum',
-    cssIcons: ['magic'],
+    materialIcons: ['magic'],
     info: 'operations on datum',
     actions: ['PLANE', '-', 'BOX', 'SPHERE', 'CYLINDER', 'TORUS', 'CONE']
     // actions: ['DATUM_MOVE', 'DATUM_ROTATE', 'DATUM_REBASE', '-', 'PLANE_FROM_DATUM', 'BOX', 'SPHERE', 'TORUS', 
@@ -63,7 +63,7 @@ export default [
   {
     id: 'contextual',
     label: 'contextual',
-    cssIcons: ['magic'],
+    materialIcons: ['magic'],
     info: 'contextual actions',
     actions: ['ModelDisplayOptions', 'ModelAttributesEditor']
   }

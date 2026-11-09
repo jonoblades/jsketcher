@@ -1,6 +1,6 @@
-const path = require('path');
+import path from 'node:path';
 
-module.exports = function() {
+export default function() {
   const index = {};
   const componentNames = {};
   
@@ -31,4 +31,3 @@ module.exports = function() {
     return name;
   }
 };
-

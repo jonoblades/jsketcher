@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import MaterialIcon from 'ui/components/MaterialIcon';
 
 
 export default class Section extends React.PureComponent {
@@ -17,7 +18,7 @@ export default class Section extends React.PureComponent {
     return <div className={cx('section', {closable, closed})} style={{paddingLeft: tabs + 'em'}}>
       <div className={cx('caption', {accent}, captionStyles)} >
         <span className='title' onClick={closable ? this.tweakClose : undefined}>
-          {closable && <i className={cx('fa fa-fw fa-caret-' + (closed ? 'right': 'down'), {'invisible': !children} )} />} {name}
+          {closable && <MaterialIcon fw icon={'caret-' + (closed ? 'right' : 'down')} className={cx({'invisible': !children})} />} {name}
         </span>
         <span className='control'>{controls}</span>
       </div>
@@ -42,5 +43,4 @@ function mapIterator(it, fn) {
     fn(i);
   }
 }
-
 

@@ -6,8 +6,8 @@ import {AiOutlineRadiusSetting} from "react-icons/ai";
 import {IoMdSquareOutline} from "react-icons/io";
 import {GiThreePointedShuriken} from "react-icons/gi";
 import {VscDebugBreakpointLogUnverified} from "react-icons/vsc";
-import {FaVectorSquare} from "react-icons/fa";
 import {CgArrowLongRightL, CgBorderRight} from "react-icons/cg";
+import MaterialIcon from "ui/components/MaterialIcon";
 
 export function ModelIcon(props: any) {
 
@@ -24,10 +24,14 @@ function getIconComp(entityType) {
     case EntityKind.EDGE: return CgBorderRight;
     case EntityKind.SKETCH_OBJECT: return AiOutlineRadiusSetting;
     case EntityKind.FACE: return IoMdSquareOutline;
-    case EntityKind.LOOP: return FaVectorSquare;
+    case EntityKind.LOOP: return LoopIcon;
     case EntityKind.VERTEX: return VscDebugBreakpointLogUnverified;
     case EntityKind.DATUM: return GiThreePointedShuriken;
     case EntityKind.DATUM_AXIS: return CgArrowLongRightL;
     default: return HiOutlineCubeTransparent;
+  }
+
+  function LoopIcon(props) {
+    return <MaterialIcon icon="select_all" {...props} />;
   }
 }

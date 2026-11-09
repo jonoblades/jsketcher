@@ -2,7 +2,7 @@ import React from 'react';
 import Window from 'ui/components/Window';
 import BrepDebugger from './brepDebugger';
 import {addToGroup, clearGroup, createGroup, removeFromGroup} from 'scene/sceneGraph';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 
 import ls from './BrepDebuggerWindow.css';
 
@@ -23,7 +23,7 @@ class BrepDebuggerWindow extends React.Component {
       return null;
     }
     return <Window initTop={10} initLeft={10} initHeight='95%'
-                   icon={<Fa fw icon='bug'/>}
+                   icon={<MaterialIcon fw icon='bug'/>}
                    title='Brep Debugger'
                    className={ls.root}
                    onClose={this.props.close}>

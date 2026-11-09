@@ -1,7 +1,7 @@
 import React from 'react';
 import ControlBar, {ControlBarButton} from './ControlBar';
 import connect from 'ui/connect';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {toIdAndOverrides} from '../../actions/actionRef';
 import {isMenuAction} from '../menu/menuBundle';
 import {menuAboveElementHint} from '../menu/menuUtils';
@@ -23,7 +23,7 @@ function ButtonGroup({actions}) {
 class ActionButton extends React.Component {
   
   render() {
-    const {label, cssIcons, icon, enabled, visible, actionId, ...props} = this.props;
+    const {label, materialIcons, icon, enabled, visible, actionId, ...props} = this.props;
     if (!visible) {
       return null;
     }
@@ -35,7 +35,7 @@ class ActionButton extends React.Component {
     }
     
     return <ControlBarButton disabled={!enabled} onElement={el => this.el = el} {...props} >
-      {cssIcons && <Fa fa={cssIcons} fw/>}
+      {materialIcons && <MaterialIcon icons={materialIcons} fw/>}
       {Icon && <Icon />}
       {label}
     </ControlBarButton>;

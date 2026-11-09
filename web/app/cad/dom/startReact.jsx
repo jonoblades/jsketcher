@@ -1,11 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import WebApplication from './components/WebApplication';
 
 export default function startReact(context, callback) {
-  return ReactDOM.render(
-    <WebApplication appContext={context} />,
-    document.getElementById('app'),
-    callback
-  );
+  const appElement = document.getElementById('app');
+  if (!appElement) {
+    throw new Error('Application root element #app was not found');
+  }
+  const root = createRoot(appElement);
+  root.render(<WebApplication appContext={context} onMount={callback} />);
+  return root;
 }

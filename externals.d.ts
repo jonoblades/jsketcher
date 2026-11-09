@@ -11,4 +11,5 @@ declare const verb: any;
 declare const FS: any;
 declare const __CAD_APP: any;
 declare const __DEBUG__: any;
+declare const __dirname: string;
 declare let out: any;

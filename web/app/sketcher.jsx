@@ -1,14 +1,13 @@
-import 'babel-polyfill';
-import 'font-awesome/css/font-awesome.min.css';
+import '@fontsource-variable/material-symbols-rounded';
+import '../css/material-symbols.css';
 import 'ui/styles/global/index.css';
 import '../css/app.css'
 
 import {createAppContext} from './sketcher/sketcherContext';
 import {Constraints} from './sketcher/parametric'
 
-import ReactDOM from "react-dom";
+import {createRoot} from "react-dom/client";
 import {SketcherApp} from "./sketcher/components/SketcherApp";
-import React from "react";
 import {loadUIState, saveUIState} from "./sketcher/uiState";
 import {Scope} from "./sketcher/components/Scope";
 import {createElement} from "./utils/domUtils";
@@ -126,11 +125,10 @@ function atatchToToolStreams(context) {
 function startReact(appCtx) {
 
   const reactControls = document.getElementById('react-controls');
-  ReactDOM.render(
-    <Scope><SketcherApp applicationContext={appCtx} /></Scope>,
-    reactControls
-  );
+  if (!reactControls) {
+    throw new Error('Sketcher root element #react-controls was not found');
+  }
+  createRoot(reactControls).render(<Scope><SketcherApp applicationContext={appCtx} /></Scope>);
 }
 
 window.addEventListener('DOMContentLoaded', () => initializeSketcherApplication());
-

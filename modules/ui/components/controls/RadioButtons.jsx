@@ -1,26 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import ls from './RadioButtons.css';
 
-export default class RadioButtons extends React.Component {
+const RadioButtonsContext = React.createContext(null);
 
-  render() {
-    return <div>{this.props.children}</div>
-  }
-  
-  getChildContext() {
-    return {
-      radioButtonsGroupName: this.groupId,
-      radioButtonsValue: this.props.value,
-      radioButtonsOnChange: this.props.onChange
-    }
-  }
-  
-  groupId = 'group_' + GROUP_COUNTER++;
+export default function RadioButtons({value, onChange, children}) {
+  const [groupId] = React.useState(() => 'group_' + GROUP_COUNTER++);
+  const context = {
+    radioButtonsGroupName: groupId,
+    radioButtonsValue: value,
+    radioButtonsOnChange: onChange
+  };
+
+  return <RadioButtonsContext.Provider value={context}>
+    <div>{children}</div>
+  </RadioButtonsContext.Provider>;
 }
 
-export function RadioButton({value, label}, {radioButtonsGroupName, radioButtonsValue, radioButtonsOnChange}) {
+export function RadioButton({value, label}) {
+  const context = React.useContext(RadioButtonsContext);
+  if (!context) {
+    throw new Error('RadioButton must be rendered inside RadioButtons');
+  }
+  const {radioButtonsGroupName, radioButtonsValue, radioButtonsOnChange} = context;
   const onChange = e => {
     radioButtonsOnChange(e.target.value)
   };
@@ -31,14 +33,5 @@ export function RadioButton({value, label}, {radioButtonsGroupName, radioButtons
     
   </label>
 }
-
-
-RadioButtons.childContextTypes = {
-  radioButtonsGroupName: PropTypes.string.isRequired,
-  radioButtonsValue: PropTypes.string.isRequired,
-  radioButtonsOnChange: PropTypes.func.isRequired
-};
-
-RadioButton.contextTypes = RadioButtons.childContextTypes;
 
 let GROUP_COUNTER = 0;

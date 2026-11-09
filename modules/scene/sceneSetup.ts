@@ -14,10 +14,11 @@ import {
   Raycaster,
   Scene,
   Vector3,
+  Vector2,
+  Camera,
   WebGLRenderer
 } from "three";
 import {Emitter, stream} from "lstream";
-import {Camera} from "three/src/cameras/Camera";
 
 export default class SceneSetUp {
   workingSphere: number;
@@ -31,7 +32,7 @@ export default class SceneSetUp {
   renderer: WebGLRenderer;
   private _prevContainerWidth: number;
   private _prevContainerHeight: number;
-  trackballControls: CADTrackballControls;
+  trackballControls: typeof CADTrackballControls.prototype;
   viewportSizeUpdate$ = stream();
   sceneRendered$: Emitter<any> = stream();
 
@@ -193,7 +194,7 @@ export default class SceneSetUp {
     const x = ( viewX / this.container.clientWidth ) * 2 - 1;
     const y = - ( viewY / this.container.clientHeight ) * 2 + 1;
 
-    const mouse = new Vector3( x, y, 1 );
+    const mouse = new Vector2( x, y );
     raycaster.setFromCamera( mouse, this.camera );
     return raycaster;
   }
@@ -237,6 +238,7 @@ export default class SceneSetUp {
     const dir = to.sub(from);
     const dist = dir.length();
     raycaster.set(from, dir.normalize());
+    raycaster.camera = this.camera;
     return raycaster.intersectObjects(objects, true ).filter(h => h.distance <= dist);
   }
   

@@ -9,7 +9,7 @@ import _ from "lodash";
 import {OperationParamValue} from "cad/craft/schema/schema";
 import {ApplicationContext} from "cad/context";
 import {Operation} from "cad/craft/operationBundle";
-import produce from "immer"
+import {produce} from "immer"
 
 export function activate(ctx: ApplicationContext) {
 

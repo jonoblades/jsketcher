@@ -1,5 +1,6 @@
 import React from 'react';
 import './brepDebugger.css';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import BREP_DEBUG from '../brep-debug';
 import ShellExplorer from './shellExplorer';
 import LoopDetectionExplorer from './loopDetectionExplorer';
@@ -23,10 +24,10 @@ export default class BrepDebugger extends React.PureComponent {
     }
     return <div className='brep-debugger'>
       <div className='section'>
-        <i className='fa fa-fw fa-eye button grayed' onClick={hideAll} />{' '}
-        <i className='fa fa-fw fa-cubes button grayed' onClick={() => __DEBUG__.HideSolids()} />{' '} 
-        <i className='fa fa-fw fa-cubes button' onClick={() => __DEBUG__.ShowSolids()} />
-        <i className='fa fa-fw fa-refresh button' onClick={() => this.forceUpdate()} />
+        <MaterialIcon fw icon='eye' className='button grayed' onClick={hideAll} />{' '}
+        <MaterialIcon fw icon='cubes' className='button grayed' onClick={() => __DEBUG__.HideSolids()} />{' '}
+        <MaterialIcon fw icon='cubes' className='button' onClick={() => __DEBUG__.ShowSolids()} />
+        <MaterialIcon fw icon='refresh' className='button' onClick={() => this.forceUpdate()} />
       </div>
       <Section name='SCENE' defaultClosed={true} closable accent captionStyles={['centered']}>
         {__CAD_APP.services.cadRegistry.shells.filter(s => s.brepShell).map(shell => <ShellExplorer shell={shell.brepShell} group3d={brepDebugGroup}/>)}
@@ -106,5 +107,4 @@ export default class BrepDebugger extends React.PureComponent {
   }
 
 }
-
 

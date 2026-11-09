@@ -1,4 +1,4 @@
-/* eslint @typescript-eslint/ban-types: 0 */
+/* eslint @typescript-eslint/no-unsafe-function-type: 0 */
 
 declare let Module: {
   _SPI_box: Function;

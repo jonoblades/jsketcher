@@ -7,7 +7,7 @@ import {MObject} from "cad/model/mobject";
 import {SceneInlineDelineation, SceneInlineSection} from "ui/components/SceneInlineSection";
 import {GenericExplorerControl, GenericExplorerNode} from "ui/components/GenericExplorer";
 import ls from "cad/craft/ui/ObjectExplorer.css";
-import Fa from "ui/components/Fa";
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
 import {ModelButtonBehavior} from "cad/craft/ui/ModelButtonBehaviour";
 import {ModelAttributes} from "cad/attributes/attributesService";
@@ -115,7 +115,7 @@ function Section(props) {
 
   return <>
     <SceneInlineDelineation onClick={tweakClose} style={{cursor: 'pointer'}}>
-      <Fa fw icon={'caret-' + (expanded ? 'down' : 'right')}/>
+      <MaterialIcon fw icon={'caret-' + (expanded ? 'down' : 'right')}/>
       <span className={ls.label}>{props.label}</span>
     </SceneInlineDelineation>
     {expanded && props.children}

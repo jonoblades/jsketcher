@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ls from './Menu.css';
 import AuxWidget from "./AuxWidget";
 import cx from 'classnames';
-import Fa from './Fa';
+import MaterialIcon from './MaterialIcon';
 import {UISystemContext} from "../../../web/app/cad/dom/components/UISystem";
 import {useStream} from "../effects";
 
@@ -77,7 +77,7 @@ export function ContextMenu(props) {
   return <ContextMenuContext.Provider value={close}>
     <span className={ls.contextMenu}>
       <span onContextMenu={onClick}>{props.children}</span>
-      <span onClick={onClick} className={ls.contextMenuBtn}><Fa fw icon='ellipsis-h'/></span>
+      <span onClick={onClick} className={ls.contextMenuBtn}><MaterialIcon fw icon='ellipsis-h'/></span>
       {state.active && <Menu x={state.x} y={state.y}>
         {props.items}
       </Menu>}

@@ -1,3 +1,4 @@
+import type {JSX} from 'react';
 import {contributeComponent} from './components/ContributedComponents';
 import {Bundle} from "bundler/bundleSystem";
 import {AppTabsService} from "cad/dom/appTabsBundle";
@@ -56,5 +57,4 @@ export const DomBundle: Bundle<DomBundleWorkingContext> = {
   BundleName: "@Dom",
 
 }
-
 

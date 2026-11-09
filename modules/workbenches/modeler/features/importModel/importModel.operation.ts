@@ -2,24 +2,27 @@ import {ApplicationContext} from "cad/context";
 import {OperationDescriptor} from "cad/craft/operationBundle";
 import {LocalFileAdapter} from "ui/components/controls/FileControl";
 import CadError from "utils/errors";
-import {parseString} from 'browser-xml2js';
 import {importStepFile} from "cad/craft/e0/interact";
-import {clone} from "gems/objects";
 import JSZip from "jszip/dist/jszip.min";
 
 interface ImportModelParams {
   file: LocalFileAdapter;
 }
 
-const parseStringAsync = (xml) => new Promise((resolve, reject) => {
-  parseString(xml, function (err, result) {
-    if (err) {
-      reject(err)
-    } else {
-      resolve(result);
-    }
-  });
-});
+function parseFreeCADXml(xml: string): Element[] {
+  const document = new DOMParser().parseFromString(xml, 'application/xml');
+  const parseError = document.getElementsByTagName('parsererror')[0];
+  if (parseError) {
+    throw new Error(`Invalid FreeCAD document XML: ${parseError.textContent}`);
+  }
+
+  const objectData = document.getElementsByTagName('ObjectData')[0];
+  if (!objectData) {
+    throw new Error('FreeCAD document XML does not contain ObjectData');
+  }
+
+  return Array.from(objectData.children).filter(element => element.tagName === 'Object');
+}
 
 export const ImportModelOperation: OperationDescriptor<ImportModelParams> = {
   id: 'IMPORT_MODEL',
@@ -53,34 +56,27 @@ export const ImportModelOperation: OperationDescriptor<ImportModelParams> = {
       const zipContents = (await JSZip.loadAsync(params.file.base64Content(), { base64: true })).files;
       const xmlFreeCADData = await zipContents["Document.xml"].async("string");
 
-      const DecodedXmlFreeCADData = (clone(await parseStringAsync(xmlFreeCADData))).Document.ObjectData[0].Object;
+      const objects = parseFreeCADXml(xmlFreeCADData);
+      for (const object of objects) {
+        const importBrepShapeName = object.querySelector('Part[file]')?.getAttribute('file');
+        const isVisible = Array.from(object.getElementsByTagName('Property')).some(property =>
+          property.getAttribute('name') === 'Visibility' && property.querySelector('Bool[value="true"]')
+        );
+        if (!importBrepShapeName || importBrepShapeName === 'PartShape.brp' || !isVisible) {
+          continue;
+        }
 
-      for (const itemToLookAt in DecodedXmlFreeCADData) {
-        const flattenedObject = flattenJSON(DecodedXmlFreeCADData[itemToLookAt]);
-        let importBrepShapeName = "";
-        const visiblePropertyName = "";
-        for (const propertyToLookAt in flattenedObject) {
-          if (propertyToLookAt.includes("Part.0.$.file")) importBrepShapeName = flattenedObject[propertyToLookAt];
-          if (importBrepShapeName !== "PartShape.brp"){
-            if (propertyToLookAt.includes("$.name") && flattenedObject[propertyToLookAt] == "Visibility") {
-              const propToCheck = propertyToLookAt.replace(".$.name", ".Bool.0.$.value");
-              const shouldItImport = flattenedObject[propToCheck];
-              if (shouldItImport == "true") {
-                try {
-                  const zipBrepContent = zipContents[importBrepShapeName];
-                  if (!zipBrepContent) {
-                    continue;
-                  }
-                  const zipContent = await zipBrepContent.async("string");
-                  FS.writeFile(importBrepShapeName, `DBRep_DrawableShape\n` + zipContent);
-                  oci.readbrep(importBrepShapeName, importBrepShapeName);
-                  returnObject.created.push(occ.io.getShell(importBrepShapeName));
-                } catch (e) {
-                  console.warn(e)
-                }
-              }
-            }
+        try {
+          const zipBrepContent = zipContents[importBrepShapeName];
+          if (!zipBrepContent) {
+            continue;
           }
+          const zipContent = await zipBrepContent.async("string");
+          FS.writeFile(importBrepShapeName, `DBRep_DrawableShape\n` + zipContent);
+          oci.readbrep(importBrepShapeName, importBrepShapeName);
+          returnObject.created.push(occ.io.getShell(importBrepShapeName));
+        } catch (e) {
+          console.warn(e)
         }
       }
 
@@ -122,14 +118,3 @@ export const ImportModelOperation: OperationDescriptor<ImportModelParams> = {
     },
   ],
 }
-
-const flattenJSON = (obj = {}, res = {}, extraKey = '') => {
-  for (const key of Object.keys(obj)) {
-    if (typeof obj[key] !== 'object') {
-      res[extraKey + key] = obj[key];
-    } else {
-      flattenJSON(obj[key], res, `${extraKey}${key}.`);
-    }
-  }
-  return res;
-};

@@ -1,79 +1,73 @@
-const path = require('path');
-const generateCSSScopedName = require('../../build/cssScoopeGenerator')();
+import path from 'node:path';
+import createCSSScopedName from '../../build/cssScoopeGenerator.js';
 
-const ROOT = path.resolve(__dirname, '../..');
+const ROOT = path.resolve(import.meta.dirname, '../..');
 const WEB_APP = path.join(ROOT, 'web/app');
 const MODULES = path.join(ROOT, 'modules');
 const NODE_MODULES = path.join(ROOT, 'node_modules');
 const TESTS = path.join(ROOT, 'test');
 const GLOBAL_CSS = path.join(ROOT, 'web/css');
+const generateCSSScopedName = createCSSScopedName();
+const styleLoader = 'style-loader';
 
-module.exports = {
+export default {
   mode: 'development',
   devtool: 'source-map',
   externals: {'verb-nurbs': 'verb'},
   resolve: {
+    alias: {'numeric$': path.join(ROOT, 'web/lib/numeric-1.2.6.js')},
+    fullySpecified: false,
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     modules: [MODULES, 'node_modules', WEB_APP]
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
-        loader: 'babel-loader',
-        include: [MODULES, WEB_APP, TESTS]
+        test: /\.tsx?$/,
+        include: [MODULES, WEB_APP, TESTS],
+        resolve: {fullySpecified: false},
+        loader: 'esbuild-loader',
+        options: {loader: 'tsx', target: 'es2022'}
+      },
+      {
+        test: /\.jsx?$/,
+        include: [MODULES, WEB_APP, TESTS],
+        resolve: {fullySpecified: false},
+        loader: 'esbuild-loader',
+        options: {loader: 'jsx', target: 'es2022'}
       },
       {
         test: /\.css$/,
-        include: [GLOBAL_CSS, TESTS],
-        use: ['style-loader', 'css-loader?-url']
+        include: [GLOBAL_CSS, TESTS, path.join(MODULES, 'ui/styles/global')],
+        use: [styleLoader, {loader: 'css-loader', options: {url: false}}]
       },
       {
         test: /\.css$/,
-        include: [NODE_MODULES],
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        oneOf: [
+        include: [MODULES, WEB_APP],
+        exclude: [path.join(MODULES, 'ui/styles/global')],
+        use: [
+          styleLoader,
           {
-            test: /\.css$/,
-            include: [path.join(MODULES, 'ui/styles/global')],
-            use: ['style-loader', 'css-loader']
-          },
-          {
-            test: /\.css$/,
-            include: [MODULES, WEB_APP],
-            use: [
-              'style-loader',
-              {
-                loader: 'css-loader',
-                options: {
-                  modules: {
-                    mode: 'local',
-                    getLocalIdent: (context, localIdentName, localName) =>
-                      generateCSSScopedName(localName, context.resourcePath)
-                  },
-                  url: false
-                }
-              }
-            ]
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                getLocalIdent: (context, localIdentName, localName) =>
+                  generateCSSScopedName(localName, context.resourcePath)
+              },
+              url: false
+            }
           }
         ]
       },
       {
-        test: /\.wasm$/,
-        type: 'javascript/auto',
-        loader: 'file-loader'
+        test: /\.css$/,
+        include: [NODE_MODULES],
+        use: [styleLoader, 'css-loader']
       },
-      {
-        test: /\.svg$/,
-        loader: 'raw-loader'
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        use: ['url-loader']
-      }
+      {test: /\.wasm$/, type: 'asset/resource'},
+      {test: /\.svg$/, type: 'asset/source'},
+      {test: /\.(png|jpg|gif)$/i, type: 'asset'}
     ]
-  },
-  node: {__dirname: true}
+  }
 };

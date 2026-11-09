@@ -1,4 +1,4 @@
-import Mousetrap from 'mousetrap';
+import {bindShortcut} from 'ui/keyboardShortcuts';
 import DefaultKeymap from './keymaps/default';
 import {isMenuAction} from '../dom/menu/menuBundle';
 import {state} from 'lstream';
@@ -11,15 +11,14 @@ export function activate(ctx) {
 
   streams.ui.keymap = state(DefaultKeymap);
   const keymap = DefaultKeymap;
-  //to attach to a dom element: Mousetrap(domElement).bind(...
   for (const action of Object.keys(keymap)) {
     const dataProvider = getDataProvider(action, services);
-    Mousetrap.bind(keymap[action], (e) => {
+    bindShortcut(keymap[action], e => {
       e.preventDefault();
       ctx.actionService.run(action, dataProvider ? dataProvider() : undefined)
     });
   }
-  Mousetrap.bind('esc', services.menu.closeAll)
+  bindShortcut('esc', services.menu.closeAll);
 }
 
 function getDataProvider(action, services) {
@@ -35,5 +34,4 @@ function getDataProvider(action, services) {
   }
   return null;
 }
-
 

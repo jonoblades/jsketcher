@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createPortal} from 'react-dom';
 import {ConstraintEditor} from './ConstraintEditor';
 import {ContextualControls} from './ContextualControls';
 import {ConstraintList} from './ConstraintExplorer';
@@ -25,27 +25,27 @@ export function SketcherApp({applicationContext}) {
     <StreamsContext.Provider value={applicationContext}>
       <Scope><ToastContainer /></Scope>
       <Scope><RightSideControls /></Scope>
-      {ReactDOM.createPortal(
+      {createPortal(
         <Scope><ConstraintList /></Scope>,
         document.getElementById('constraint-list')
       )}
-      {ReactDOM.createPortal(
+      {createPortal(
         <Scope><SketcherPropertiesView /></Scope>,
         document.getElementById('properties-view')
       )}
-      {ReactDOM.createPortal(
+      {createPortal(
         <Scope><SketcherDimensionView /></Scope>,
         document.getElementById('dimension-view')
       )}
-      {ReactDOM.createPortal(
+      {createPortal(
         <Scope><SketcherToolbar actions={sketcherRightToolbarConfig}/></Scope>,
         document.getElementById('right-toolbar')
       )}
-      {ReactDOM.createPortal(
+      {createPortal(
         <Scope><SketcherToolbar actions={sketcherTopToolbarConfig} horizontal compact/></Scope>,
         document.getElementById('top-toolbar')
       )}
-      {ReactDOM.createPortal(
+      {createPortal(
         <React.Fragment>
           <Scope><SketchManager /></Scope>
           <Scope><ExportDialog /></Scope>

@@ -8,14 +8,13 @@ export default function Button({type, onClick, className, compact, ...props}: {
   className? : string,
   children?: any,
   compact?: boolean
-  } & JSX.IntrinsicAttributes) {
+  } & React.JSX.IntrinsicAttributes) {
 
   type = type || 'neutral';
 
   return <button onClick={onClick} className={cx(type, compact&&'compact', className)} {...props} />
 
 }
-
 
 
 

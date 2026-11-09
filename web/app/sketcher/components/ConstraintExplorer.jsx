@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import ls from './ConstraintExplorer.css';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {useStream} from "ui/effects";
 import cx from 'classnames';
 import {showConstraintEditorUI} from "./ConstraintEditor";
@@ -87,7 +87,7 @@ export function ConstraintButton({prefix='', constraint: c, ...props}) {
     <span className={ls.objectTag}>
         {prefix} {c.schema.name}
       </span>
-    <span className={ls.removeButton} onClick={() => remove(c)}><Fa icon='times'/></span>
+    <span className={ls.removeButton} onClick={() => remove(c)}><MaterialIcon icon='times'/></span>
 
   </div>
 
@@ -125,7 +125,7 @@ export function GeneratorButton({prefix='', generator: c, ...props}) {
     <span className={ls.objectTag}>
         {prefix} {c.schema.title}
       </span>
-    <span className={ls.removeButton} onClick={() => remove(c)}><Fa icon='times'/></span>
+    <span className={ls.removeButton} onClick={() => remove(c)}><MaterialIcon icon='times'/></span>
 
   </div>
 

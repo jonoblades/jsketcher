@@ -1,22 +1,21 @@
 import {defineConfig, normalizePath} from 'vite';
-import {transformAsync} from '@babel/core';
-import {createRequire} from 'node:module';
+import react from '@vitejs/plugin-react-swc';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {readFile, readdir, mkdir, writeFile, copyFile, cp} from 'node:fs/promises';
 import {createReadStream} from 'node:fs';
 import {execFileSync} from 'node:child_process';
+import {glob} from 'glob';
+import Handlebars from 'handlebars';
+import {marked} from 'marked';
+import libAssets from './build/libAssets.js';
+import createCSSScopedName from './build/cssScoopeGenerator.js';
 
-const require = createRequire(import.meta.url);
-const glob = require('glob');
-const Handlebars = require('handlebars');
-const {marked} = require('marked');
 const root = path.dirname(fileURLToPath(import.meta.url));
 const web = path.join(root, 'web');
 const modules = path.join(root, 'modules');
 const app = path.join(web, 'app');
-const libAssets = require('./build/libAssets');
-const scopedName = require('./build/cssScoopeGenerator')();
+const scopedName = createCSSScopedName();
 const docsSource = path.join(modules, 'workbenches');
 const docsPattern = '*/features/*/docs/**/*';
 const aliases = [];
@@ -27,6 +26,10 @@ for (const directory of [modules, app]) {
     }
   }
 }
+aliases.push({
+  find: /^numeric$/,
+  replacement: normalizePath(path.join(web, 'lib', 'numeric-1.2.6.js'))
+});
 
 function legacySources() {
   return {
@@ -54,25 +57,11 @@ function legacySources() {
         return 'export default ' + JSON.stringify(await readFile(id, 'utf8')) + ';';
       }
     },
-    async transform(code, id) {
+    transform(code, id) {
       const filename = id.split('?')[0];
       if (!/\.[jt]sx?$/.test(filename) || filename.includes('/node_modules/')) return;
       if (![modules, app].some(directory => filename.startsWith(normalizePath(directory) + '/'))) return;
-      const result = await transformAsync(code, {
-        filename,
-        babelrc: false,
-        configFile: false,
-        sourceMaps: true,
-        presets: [
-          ...(/\.tsx?$/.test(filename) ? [['@babel/preset-typescript', {allExtensions: true, isTSX: filename.endsWith('.tsx')}]] : []),
-          '@babel/preset-react'
-        ],
-        plugins: [['@babel/plugin-proposal-decorators', {legacy: true}], '@babel/plugin-proposal-class-properties']
-      });
-      return {
-        code: result.code.replace(/\b__dirname\b/g, JSON.stringify(normalizePath(path.relative(root, path.dirname(filename))))),
-        map: result.map
-      };
+      return code.replace(/\b__dirname\b/g, JSON.stringify(normalizePath(path.relative(root, path.dirname(filename)))));
     }
   };
 }
@@ -113,9 +102,7 @@ function staticResources() {
 
 function documentation() {
   async function generate() {
-    const files = await new Promise((resolve, reject) => {
-      glob(docsPattern, {cwd: docsSource, nodir: true}, (error, matches) => error ? reject(error) : resolve(matches));
-    });
+    const files = await glob(docsPattern, {cwd: docsSource, nodir: true});
     const docsRoot = path.join(web, 'docs');
     const template = Handlebars.compile(await readFile(path.join(modules, 'doc/doc-layout.handlebars'), 'utf8'));
     const workbenches = new Map();
@@ -179,7 +166,7 @@ function fixLinks(htmlContent) {
 export default defineConfig({
   root: web,
   publicDir: false,
-  plugins: [legacySources(), documentation(), staticResources()],
+  plugins: [react(), legacySources(), documentation(), staticResources()],
   resolve: {alias: aliases, extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json']},
   css: {
     modules: {generateScopedName: (name, filename) => scopedName(name, filename.split('?')[0])}
@@ -193,9 +180,5 @@ export default defineConfig({
     commonjsOptions: {transformMixedEsModules: true, include: [/node_modules/]},
     rollupOptions: {input: {index: path.join(web, 'index.html'), sketcher: path.join(web, 'sketcher.html')}}
   },
-  optimizeDeps: {
-    include: ['babel-polyfill', 'react', 'react-dom'],
-    exclude: ['verb-nurbs'],
-    esbuildOptions: {loader: {'.js': 'jsx'}}
-  }
+  optimizeDeps: {exclude: ['verb-nurbs']}
 });

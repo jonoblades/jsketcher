@@ -1,7 +1,7 @@
 import React from 'react';
 import Stack from 'ui/components/Stack';
 import connect from 'ui/connect';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import ImgIcon from 'ui/components/ImgIcon';
 import ls from './OperationHistory.css';
 import cx from 'classnames';
@@ -24,9 +24,9 @@ function OperationHistory({history, pointer, setHistoryPointer, remove, getOpera
         {appearance && <ImgIcon url={appearance.icon32} size={16}/>}
         <span className={ls.opLabel}>{label} {PIComp ? <PIComp params={params}/> : (paramsInfo && paramsInfo(params))} </span>
         <span className={ls.buttons}>
-          <Fa icon='edit' />
-          <Fa icon='image' />
-          <Fa icon='remove' className={ls.danger} onClick={() => remove(index)}/>
+          <MaterialIcon icon='edit' />
+          <MaterialIcon icon='image' />
+          <MaterialIcon icon='remove' className={ls.danger} onClick={() => remove(index)}/>
         </span>
       </div>;
     })}

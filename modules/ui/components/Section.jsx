@@ -1,6 +1,6 @@
 import React from 'react';
 import ls from './Section.css';
-import Fa from './Fa';
+import MaterialIcon from './MaterialIcon';
 
 export const TabContext = React.createContext(0);
 
@@ -22,7 +22,7 @@ export class Section extends React.PureComponent {
           <TabContext.Provider value={tabs + 1}>
             <div className='sectionHeader'>
               <span className={ls.handle} onClick={!nonClosable ? this.tweakClose : undefined}>
-                <Fa fw icon={!nonClosable && children && children.length !== 0 ? ('caret-' + (closed ? 'right' : 'down')) : null}/>
+                <MaterialIcon fw icon={!nonClosable && children && children.length !== 0 ? ('caret-' + (closed ? 'right' : 'down')) : null}/>
               </span>
               <span className={ls.label}>{label}</span>
             </div>
@@ -43,5 +43,4 @@ export class Section extends React.PureComponent {
     this.setState({closed: !this.isClosed()});
   };
 }
-
 

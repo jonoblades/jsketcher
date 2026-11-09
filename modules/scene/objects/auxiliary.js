@@ -1,5 +1,5 @@
 import DPR from 'dpr';
-import {ArrowHelper, CylinderBufferGeometry, Mesh, MeshBasicMaterial, Object3D, Vector3} from 'three';
+import {ArrowHelper, CylinderGeometry, Mesh, MeshBasicMaterial, Object3D, Vector3} from 'three';
 import {createMeshLineGeometry} from './meshLine';
 
 export function createArrow(length, arrowLength, arrowHead, axis, color, opacity, materialMixins) {
@@ -35,7 +35,7 @@ export class MeshArrow extends Object3D {
     if (materialCreate === undefined) materialCreate = params => new MeshBasicMaterial(params);
     
     if (!tipGeometry) {
-      tipGeometry = new CylinderBufferGeometry(0, 0.5, 1, 5, 1);
+      tipGeometry = new CylinderGeometry(0, 0.5, 1, 5, 1);
       tipGeometry.translate(0, -0.5, 0);
       lineGeometry = createMeshLineGeometry([[0, 0, 0], [0, 1, 0]], 1);
     }

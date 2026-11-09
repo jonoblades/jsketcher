@@ -29,7 +29,7 @@ export default [
   {
     id: 'EditOperationSketch',
     appearance: {
-      cssIcons: ['image'],
+      materialIcons: ['image'],
       label: 'sketch',
       info: 'edit the sketch assigned to this operation',
     },

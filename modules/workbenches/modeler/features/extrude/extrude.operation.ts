@@ -145,7 +145,8 @@ export const ExtrudeOperation: OperationDescriptor<ExtrudeParams> = {
           flip: true
         },
         boolean: {
-          kind: 'SUBTRACT'
+          kind: 'SUBTRACT',
+          simplify: true
         }
       }
     }

@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import ls from './Widget.css';
 import AdjustableAbs from './AdjustableAbs';
-import Fa from './Fa';
+import MaterialIcon from './MaterialIcon';
 import SymbolButton from './controls/SymbolButton';
 
 export default function Widget({flatTop, flatBottom, flatRight, flatLeft, children, className, title, onClose, ...props}) {
@@ -14,7 +14,7 @@ export default function Widget({flatTop, flatBottom, flatRight, flatLeft, childr
     <div className={ls.header}>
       <div className={ls.title}>{title}</div>
       <span className={ls.headerButtons}>
-        <SymbolButton type='danger' onClick={onClose}><Fa fw icon='close'/></SymbolButton>
+        <SymbolButton type='danger' onClick={onClose}><MaterialIcon fw icon='close'/></SymbolButton>
       </span>
     </div>
     <div className={ls.content}>

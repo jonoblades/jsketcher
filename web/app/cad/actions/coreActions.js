@@ -5,7 +5,7 @@ export default [
   {
     id: 'EditFace',
     appearance: {
-      cssIcons: ['file-picture-o'],
+      materialIcons: ['file-picture-o'],
       label: 'sketch',
       icon96: 'img/cad/face-edit96.png',
       info: 'open sketcher for a face/plane',
@@ -18,7 +18,7 @@ export default [
   {
     id: 'ReassignSketch',
     appearance: {
-      cssIcons: ['share'],
+      materialIcons: ['share'],
       label: 'reassign sketch',
       icon96: 'img/cad/face-edit96.png',
       info: 'open sketcher for a face/plane',
@@ -31,7 +31,7 @@ export default [
   {
     id: 'Save',
     appearance: {
-      cssIcons: ['floppy-o'],
+      materialIcons: ['floppy-o'],
       label: 'save',
       info: 'save project to storage',
     },
@@ -41,7 +41,7 @@ export default [
   {
     id: 'StlExport',
     appearance: {
-      cssIcons: ['upload', 'flip-vertical'],
+      materialIcons: ['upload', 'flip-vertical'],
       label: 'STL Export',
       info: 'export model to STL file',
     },
@@ -51,7 +51,7 @@ export default [
   {
     id: 'ImagePngExport',
     appearance: {
-      cssIcons: ['image'],
+      materialIcons: ['image'],
       label: 'PNG Export',
       info: 'export model as png image/render a snapshot',
     },
@@ -61,7 +61,7 @@ export default [
   {
     id: 'NativeFormatExport',
     appearance: {
-      cssIcons: ['book'],
+      materialIcons: ['book'],
       label: 'Download Project',
       info: 'export model and its sketches as a json bundle',
     },
@@ -71,7 +71,7 @@ export default [
   {
     id: 'NativeFormatImport',
     appearance: {
-      cssIcons: ['download', 'flip-vertical'],
+      materialIcons: ['download', 'flip-vertical'],
       label: 'Import Project',
       info: 'empty current project and import replacing with native format json(model and its sketches)',
     },
@@ -81,7 +81,7 @@ export default [
   {
     id: 'NativeFormatImportAs',
     appearance: {
-      cssIcons: ['download', 'flip-vertical'],
+      materialIcons: ['download', 'flip-vertical'],
       label: 'Import Project as...',
       info: 'import native format json(model and its sketches) as a new project',
     },
@@ -91,7 +91,7 @@ export default [
   {
     id: 'NewProject',
     appearance: {
-      cssIcons: ['file-o'],
+      materialIcons: ['file-o'],
       label: 'New Project...',
       info: 'create new project and open in a new tab',
     },
@@ -101,7 +101,7 @@ export default [
   {
     id: 'CloneCurrentProject',
     appearance: {
-      cssIcons: ['copy'],
+      materialIcons: ['copy'],
       label: 'Clone Project...',
       info: 'clone current project and open in a new tab',
     },
@@ -111,7 +111,7 @@ export default [
   {
     id: 'RefreshSketches',
     appearance: {
-      cssIcons: ['refresh'],
+      materialIcons: ['refresh'],
       label: 'Refresh Sketches',
       info: 'refresh all visible sketches',
     },
@@ -121,7 +121,7 @@ export default [
   {
     id: 'DeselectAll',
     appearance: {
-      cssIcons: ['square-o'],
+      materialIcons: ['square-o'],
       label: 'deselect all',
       info: 'deselect everything',
     },
@@ -131,7 +131,7 @@ export default [
   {
     id: 'ToggleCameraMode',
     appearance: {
-      cssIcons: ['video-camera'],
+      materialIcons: ['video-camera'],
       label: 'toggle camera',
       info: 'switch camera mode between perspective and orthographic',
     },
@@ -145,7 +145,7 @@ export default [
   {
     id: 'Info',
     appearance: {
-      cssIcons: ['info-circle'],
+      materialIcons: ['info-circle'],
       label: 'info',
       info: 'opens help dialog',
     },
@@ -155,7 +155,7 @@ export default [
   {
     id: 'Donate',
     appearance: {
-      cssIcons: ['paypal'],
+      materialIcons: ['paypal'],
       label: 'donate',
       info: 'open paypal donate page',
     },
@@ -165,7 +165,7 @@ export default [
   {
     id: 'GitHub',
     appearance: {
-      cssIcons: ['github'],
+      materialIcons: ['github'],
       label: 'GitHub',
       info: 'open GitHub project page',
     },
@@ -177,7 +177,7 @@ export default [
     type: 'binary',
     property: 'showSketches',
     appearance: {
-      cssIcons: ['image'],
+      materialIcons: ['image'],
       label: 'show sketches',
       info: 'toggle whether to show sketches on a solid face'
     }

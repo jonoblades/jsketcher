@@ -1,4 +1,5 @@
 import React from 'react';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {
   AQUA, BLACK, BLUE, cycleColor, DETECTED_EDGE, DISCARDED_EDGE, GREEN, RED, SALMON, WHITE,
   YELLOW
@@ -245,8 +246,8 @@ export function Controls({viewObjectsProvider, group3d, category, context, topoO
     applyToAll(o => o.__tcad_debug_materials.forEach(m =>  m.color.setHex(cycleColor(m.color.getHex()))));
   }
   return <span>
-    <i className='fa fa-fw fa-eye-slash clickable' onClick={tweak}/>
-    <i className='fa fa-fw fa-paint-brush clickable' onClick={_cycleColor}/>
+    <MaterialIcon fw icon='eye-slash' className='clickable' onClick={tweak}/>
+    <MaterialIcon fw icon='paint-brush' className='clickable' onClick={_cycleColor}/>
   </span>;
 }
 

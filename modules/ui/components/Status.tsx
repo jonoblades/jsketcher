@@ -1,6 +1,6 @@
 import * as React from "react";
 import {BsCheckCircle, BsQuestionCircle} from "react-icons/bs";
-import {FaRegTimesCircle} from "react-icons/fa";
+import MaterialIcon from "ui/components/MaterialIcon";
 
 export function Status({success}: {
   success?: boolean
@@ -11,7 +11,7 @@ export function Status({success}: {
       color: 'green'
     }}/> success</span>
   } else if (success === false) {
-    return <span><FaRegTimesCircle style={{
+    return <span><MaterialIcon icon="cancel" style={{
       color: 'red'
     }}/> fail</span>
   } else {

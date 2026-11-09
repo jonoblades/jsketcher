@@ -4,8 +4,10 @@ import {contributeComponent} from "cad/dom/components/ContributedComponents";
 import {DisplayOptionsDialogManager} from "cad/attributes/ui/DisplayOptionsDialog";
 import {RequiresAnyModelSelection} from "cad/actions/actionHelpers";
 import {IoColorPalette} from "react-icons/io5";
-import {FaTable} from "react-icons/fa";
+import MaterialIcon from "ui/components/MaterialIcon";
 import {ApplicationContext} from "cad/context";
+
+const AttributesTableIcon = () => <MaterialIcon icon="table_chart" />;
 
 export interface AttributesBundleContext {
   attributesService: AttributesService;
@@ -36,7 +38,7 @@ export const AttributesBundle: Bundle<ApplicationContext> = {
       {
         id: 'ModelAttributesEditor',
         appearance: {
-          icon: FaTable,
+          icon: AttributesTableIcon,
           label: 'edit attributes...',
           info: 'open a dialog with attributes editor for the model',
         },
@@ -48,5 +50,3 @@ export const AttributesBundle: Bundle<ApplicationContext> = {
 
   BundleName: "@Attributes",
 }
-
-

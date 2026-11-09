@@ -3,15 +3,10 @@ import Folder from 'ui/components/Folder';
 import ls from './FloatView.css';
 import connect from 'ui/connect';
 import mapContext from 'ui/mapContext';
-import Fa from 'ui/components/Fa';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import ToolButton from 'ui/components/ToolButton';
 
-@connect(state => state.ui.floatViews.map(views => ({views})))
-@mapContext(ctx => ({
-  getDescriptor: ctx.services.ui.getFloatView,
-  initialView: ctx.projectService.hints.FloatView || null
-}))
-export default class FloatView extends React.Component {
+class FloatView extends React.Component {
 
   
   constructor(props) {
@@ -27,7 +22,7 @@ export default class FloatView extends React.Component {
 
     function renderedIcon(icon) {
       if (typeof icon === 'string') {
-        return <Fa fw icon={icon}/>;
+        return <MaterialIcon fw icon={icon}/>;
       }  else {
         const I = icon;
         return <I />;
@@ -63,3 +58,10 @@ export default class FloatView extends React.Component {
     </div>;
   }
 }
+
+export default connect(state => state.ui.floatViews.map(views => ({views})))(
+  mapContext(ctx => ({
+    getDescriptor: ctx.services.ui.getFloatView,
+    initialView: ctx.projectService.hints.FloatView || null
+  }))(FloatView)
+);

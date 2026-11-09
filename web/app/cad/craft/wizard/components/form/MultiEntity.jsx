@@ -6,9 +6,7 @@ import mapContext from 'ui/mapContext';
 import PropTypes from 'prop-types';
 import initializeBySchema from '../../../schema/initializeBySchema';
 
-@attachToForm
-@mapContext(({streams}) => ({streams}))
-export default class MultiEntity extends React.Component {
+class MultiEntity extends React.Component {
 
   selectionChanged = selection => {
     const {itemField, schema, context} = this.props;
@@ -66,3 +64,5 @@ MultiEntity.propTypes = {
   entity: PropTypes.string.isRequired,
   schema: PropTypes.object.isRequired
 };
+
+export default attachToForm(mapContext(({streams}) => ({streams}))(MultiEntity));

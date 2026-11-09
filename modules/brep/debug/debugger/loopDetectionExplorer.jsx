@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from "./section";
 import cx from 'classnames';
+import MaterialIcon from 'ui/components/MaterialIcon';
 import {ActiveLabel, Controls, getEdgeViewObjects, getInitColor, mapIterable, setViewObjectsColor, TAB} from "./utils";
 import {EdgeExplorer, EdgesExplorer, LoopsExplorer} from "./shellExplorer";
 import {DETECTED_EDGE, DISCARDED_EDGE, GREEN, GREEN_YELLOW, SALMON, WHITE, YELLOW} from "./colors";
@@ -123,8 +124,8 @@ export default class LoopDetectionExplorer extends React.PureComponent {
     
     const controls = <span>
         <Controls {...ctrlProps} />
-        <span className={cx({clickable: !begin, grayed: begin})} onClick={stepBack}><i className='fa fa-fw fa-caret-square-o-left' /> back</span>
-        <span className={cx({clickable: !end, grayed: end})} onClick={stepNext}><i className='fa fa-fw fa-caret-square-o-right' /> next</span>
+        <span className={cx({clickable: !begin, grayed: begin})} onClick={stepBack}><MaterialIcon fw icon='caret-square-o-left' /> back</span>
+        <span className={cx({clickable: !end, grayed: end})} onClick={stepNext}><MaterialIcon fw icon='caret-square-o-right' /> next</span>
         <i> step: <b>{this.state.step || '-'}</b></i>
       </span>;
 
